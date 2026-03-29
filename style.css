@@ -82,7 +82,27 @@ section {
     margin-bottom: 8px;
 }
 
-/* BOTÃO */
+/* BOTÃO WHATSAPP (NOVO) */
+.btn-produto {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 14px;
+    background: #25D366;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+/* HOVER BOTÃO */
+.btn-produto:hover {
+    background: #1ebe5d;
+    transform: scale(1.05);
+}
+
+/* BOTÃO VOLTAR */
 .btn-container {
     text-align: center;
     margin: 2rem 0;
