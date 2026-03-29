@@ -7,6 +7,7 @@ body {
     line-height: 1.6;
 }
 
+/* HEADER */
 header {
     text-align: center;
     background: linear-gradient(90deg, #c62828, #ff7043);
@@ -26,8 +27,9 @@ h1 {
     margin-bottom: 0.5rem;
 }
 
+/* SECTION PADRÃO */
 section {
-    max-width: 900px;
+    max-width: 1100px;
     margin: 2rem auto;
     background: #fff;
     padding: 2rem;
@@ -35,37 +37,52 @@ section {
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-section h2 {
-    color: #b71c1c;
-    text-align: center;
-    margin-bottom: 1rem;
-}
-
-ul {
-    list-style-type: square;
-    padding-left: 1.5rem;
-}
-
+/* GRID DE PRODUTOS */
 .produtos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1.5rem;
 }
 
+/* CARD */
 .produto {
     background: #fafafa;
     border: 1px solid #eee;
-    border-radius: 10px;
-    padding: 1.2rem;
+    border-radius: 12px;
+    padding: 1rem;
     text-align: center;
-    transition: transform 0.3s;
+    transition: 0.3s;
+    overflow: hidden;
 }
 
+/* EFEITO HOVER */
 .produto:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
 }
 
+/* IMAGEM DO PRODUTO */
+.produto img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    transition: 0.3s;
+}
+
+/* ZOOM NA IMAGEM */
+.produto:hover img {
+    transform: scale(1.05);
+}
+
+/* TITULO */
+.produto h3 {
+    color: #b71c1c;
+    margin-bottom: 8px;
+}
+
+/* BOTÃO */
 .btn-container {
     text-align: center;
     margin: 2rem 0;
@@ -85,6 +102,7 @@ ul {
     background: #ff7043;
 }
 
+/* FOOTER */
 footer {
     text-align: center;
     background: #333;
