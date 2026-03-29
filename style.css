@@ -101,7 +101,7 @@ section {
     transform: scale(1.05);
 }
 
-/* BOTÃO PADRÃO (VER PRODUTOS / VOLTAR) */
+/* BOTÃO PADRÃO */
 .btn-container {
     text-align: center;
     margin: 2rem 0;
@@ -121,22 +121,29 @@ section {
     background: #ff7043;
 }
 
-/* BOTÃO WHATSAPP DO INDEX (NOVO) */
-.btn-whatsapp {
-    display: inline-block;
+/* BOTÃO WHATSAPP FLUTUANTE */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
     background: #25D366;
-    color: #fff;
+    color: white;
+    font-size: 26px;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
-    padding: 0.8rem 1.5rem;
-    border-radius: 8px;
-    margin-left: 10px;
-    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     transition: 0.3s;
+    z-index: 1000;
 }
 
-.btn-whatsapp:hover {
+.whatsapp-float:hover {
     background: #1ebe5d;
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
 
 /* FOOTER */
