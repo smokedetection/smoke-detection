@@ -82,7 +82,7 @@ section {
     margin-bottom: 8px;
 }
 
-/* BOTÃO WHATSAPP (NOVO) */
+/* BOTÃO WHATSAPP DOS PRODUTOS */
 .btn-produto {
     display: inline-block;
     margin-top: 10px;
@@ -96,13 +96,12 @@ section {
     transition: 0.3s;
 }
 
-/* HOVER BOTÃO */
 .btn-produto:hover {
     background: #1ebe5d;
     transform: scale(1.05);
 }
 
-/* BOTÃO VOLTAR */
+/* BOTÃO PADRÃO (VER PRODUTOS / VOLTAR) */
 .btn-container {
     text-align: center;
     margin: 2rem 0;
@@ -120,6 +119,24 @@ section {
 
 .btn:hover {
     background: #ff7043;
+}
+
+/* BOTÃO WHATSAPP DO INDEX (NOVO) */
+.btn-whatsapp {
+    display: inline-block;
+    background: #25D366;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    margin-left: 10px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-whatsapp:hover {
+    background: #1ebe5d;
+    transform: scale(1.05);
 }
 
 /* FOOTER */
