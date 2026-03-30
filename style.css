@@ -1,3 +1,15 @@
+/* ======================= DARK MODE - STYLE.CSS ======================= */
+
+/* BODY */
+body {
+    background: #111; /* fundo preto */
+    color: #eee;      /* texto padrão branco */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
 /* HERO */
 .hero {
     background: linear-gradient(90deg, #c62828, #ff7043);
@@ -54,22 +66,15 @@
     background: #1ebe5d;
 }
 
-/* BOTÃO SECUNDÁRIO (proporcional) */
-.btn-secondary {
-    display: inline-block;
-    padding: 10px 18px; /* menor que btn-whats */
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    background: white;
-    color: #c62828;
-    transition: 0.3s;
-    text-align: center;
-    font-size: 0.95rem;
+/* BOTÃO SECUNDÁRIO HERO */
+.btn-sec {
+    background: #444;  /* fundo escuro pra aparecer no hero */
+    color: #fff;
+    border: 1px solid #fff;
 }
 
-.btn-secondary:hover {
-    background: #eee;
+.btn-sec:hover {
+    background: #555;
 }
 
 /* HEADER */
@@ -78,7 +83,7 @@ header {
     background: linear-gradient(90deg, #c62828, #ff7043);
     color: #fff;
     padding: 2rem 1rem;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
 }
 
 header .logo {
@@ -87,22 +92,31 @@ header .logo {
     margin-bottom: 1rem;
 }
 
-/* BOTÕES DO HEADER CORRIGIDOS */
+/* BOTÕES DO HEADER */
 header .hero-buttons .btn-hero {
-    margin: 0; /* remove qualquer espaçamento extra */
+    margin: 0;
 }
 
-/* SECTION */
+/* SECTIONS */
 section {
     max-width: 1100px;
     margin: 2rem auto;
-    background: #fff;
+    background: #1a1a1a; /* fundo escuro das seções */
     padding: 2rem;
     border-radius: 14px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    color: #eee;
 }
 
-/* GRID */
+section h2 {
+    color: #fff;
+}
+
+section ul li {
+    color: #ccc;
+}
+
+/* GRID DE PRODUTOS */
 .produtos {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -111,24 +125,24 @@ section {
 
 /* CARD */
 .produto {
-    background: #fafafa;
+    background: #222;
     border-radius: 14px;
     padding: 1rem;
     text-align: center;
     transition: 0.3s;
     overflow: hidden;
+    color: #fff;
 }
 
-/* HOVER */
+/* HOVER CARD */
 .produto:hover {
     transform: translateY(-8px) scale(1.03);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.6);
 }
 
-/* IMG DOS PRODUTOS (PROPORCIONAL) */
 .produto img {
     width: 100%;
-    max-height: 120px; /* mais proporcional */
+    max-height: 120px;
     object-fit: cover;
     border-radius: 10px;
     margin-bottom: 12px;
@@ -141,7 +155,7 @@ section {
 
 /* TITULO DOS PRODUTOS */
 .produto h3 {
-    color: #b71c1c;
+    color: #ff7043;
 }
 
 /* BOTÃO PRODUTO */
@@ -183,7 +197,7 @@ section {
     background: #ff7043;
 }
 
-/* WHATS FLOAT */
+/* WHATSAPP FLUTUANTE */
 .whatsapp-float {
     position: fixed;
     bottom: 20px;
@@ -198,7 +212,7 @@ section {
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
     transition: 0.3s;
     z-index: 1000;
 }
@@ -211,8 +225,8 @@ section {
 /* FOOTER */
 footer {
     text-align: center;
-    background: #333;
-    color: #ddd;
+    background: #000;
+    color: #ccc;
     padding: 1.5rem 1rem;
     font-size: 0.9rem;
 }
@@ -232,8 +246,7 @@ footer {
         align-items: center;
     }
 
-    .btn-hero, .btn-secondary {
+    .btn-hero {
         width: 90%;
-        margin-bottom: 10px;
     }
 }
