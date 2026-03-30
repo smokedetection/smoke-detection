@@ -66,15 +66,16 @@ body {
     background: #1ebe5d;
 }
 
-/* BOTÃO SECUNDÁRIO HERO */
+/* BOTÃO SECUNDÁRIO HERO - visível no dark mode */
 .btn-sec {
-    background: #444;  /* fundo escuro pra aparecer no hero */
-    color: #fff;
-    border: 1px solid #fff;
+    background: white;  /* deixa branco pra aparecer */
+    color: #c62828;     /* texto vermelho */
+    font-weight: bold;
+    border: none;
 }
 
 .btn-sec:hover {
-    background: #555;
+    background: #eee;
 }
 
 /* HEADER */
