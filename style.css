@@ -1,12 +1,3 @@
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f5f5f5;
-    color: #222;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-}
-
 /* HERO */
 .hero {
     background: linear-gradient(90deg, #c62828, #ff7043);
@@ -26,7 +17,7 @@ body {
     font-size: 1.2rem;
 }
 
-/* AGRUPAMENTO DOS BOTÕES (CORREÇÃO DO BUG) */
+/* AGRUPAMENTO DE BOTÕES */
 .hero-buttons {
     display: flex;
     justify-content: center;
@@ -35,7 +26,7 @@ body {
     margin-top: 20px;
 }
 
-/* BOTÕES */
+/* BOTÕES HERO */
 .btn-hero {
     display: inline-block;
     padding: 16px 26px;
@@ -43,9 +34,10 @@ body {
     text-decoration: none;
     font-weight: bold;
     transition: 0.3s;
+    text-align: center;
 }
 
-/* BOTÃO WHATS (COM EFEITO PULSANDO) */
+/* BOTÃO WHATS (COM PULSO) */
 .btn-whats {
     background: #25D366;
     color: white;
@@ -81,139 +73,15 @@ header {
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-.logo {
+header .logo {
     width: 120px;
     height: auto;
     margin-bottom: 1rem;
 }
 
-h1 {
-    font-size: 1.8rem;
-}
-
-/* SECTION */
-section {
-    max-width: 1100px;
-    margin: 2rem auto;
-    background: #fff;
-    padding: 2rem;
-    border-radius: 14px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
-
-/* GRID */
-.produtos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-}
-
-/* CARD */
-.produto {
-    background: #fafafa;
-    border-radius: 14px;
-    padding: 1rem;
-    text-align: center;
-    transition: 0.3s;
-    overflow: hidden;
-}
-
-/* HOVER */
-.produto:hover {
-    transform: translateY(-8px) scale(1.03);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-}
-
-/* IMG */
-.produto img {
-    width: 100%;
-    height: 160px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 12px;
-    transition: 0.3s;
-}
-
-.produto:hover img {
-    transform: scale(1.08);
-}
-
-/* TITULO */
-.produto h3 {
-    color: #b71c1c;
-}
-
-/* BOTÃO PRODUTO */
-.btn-produto {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 16px;
-    background: #25D366;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 8px;
-    font-size: 0.95rem;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.btn-produto:hover {
-    background: #1ebe5d;
-    transform: scale(1.05);
-}
-
-/* BOTÃO PADRÃO */
-.btn-container {
-    text-align: center;
-    margin: 2rem 0;
-}
-
-.btn {
-    background: #c62828;
-    color: #fff;
-    text-decoration: none;
-    padding: 1rem 1.8rem;
-    border-radius: 10px;
-    transition: 0.3s;
-    font-weight: bold;
-}
-
-.btn:hover {
-    background: #ff7043;
-}
-
-/* WHATS FLOAT */
-.whatsapp-float {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #25D366;
-    color: white;
-    font-size: 26px;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    transition: 0.3s;
-    z-index: 1000;
-}
-
-.whatsapp-float:hover {
-    background: #1ebe5d;
-    transform: scale(1.15);
-}
-
-/* FOOTER */
-footer {
-    text-align: center;
-    background: #333;
-    color: #ddd;
-    padding: 1.5rem 1rem;
-    font-size: 0.9rem;
+/* BOTÕES DO HEADER CORRIGIDOS */
+header .hero-buttons .btn-hero {
+    margin: 0; /* remove qualquer espaçamento extra */
 }
 
 /* RESPONSIVO */
@@ -233,6 +101,5 @@ footer {
 
     .btn-hero {
         width: 90%;
-        text-align: center;
     }
-        }
+}
