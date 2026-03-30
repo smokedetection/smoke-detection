@@ -7,44 +7,54 @@ body {
     line-height: 1.6;
 }
 
-/* HERO (LANDING PAGE NOVA) */
+/* HERO */
 .hero {
     background: linear-gradient(90deg, #c62828, #ff7043);
     color: white;
     text-align: center;
-    padding: 80px 20px;
+    padding: 100px 20px;
 }
 
 .hero h1 {
-    font-size: 2.2rem;
+    font-size: 2.4rem;
+    max-width: 800px;
+    margin: auto;
 }
 
 .hero p {
     margin-top: 15px;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
 }
 
-/* BOTÕES DA LANDING */
+/* BOTÕES */
 .btn-hero {
     display: inline-block;
     margin: 10px;
-    padding: 14px 24px;
-    border-radius: 8px;
+    padding: 16px 26px;
+    border-radius: 10px;
     text-decoration: none;
     font-weight: bold;
     transition: 0.3s;
 }
 
+/* BOTÃO WHATS (COM EFEITO PULSANDO) */
 .btn-whats {
     background: #25D366;
     color: white;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
 }
 
 .btn-whats:hover {
     background: #1ebe5d;
-    transform: scale(1.05);
 }
 
+/* BOTÃO SECUNDÁRIO */
 .btn-sec {
     background: white;
     color: #c62828;
@@ -71,20 +81,19 @@ header {
 
 h1 {
     font-size: 1.8rem;
-    margin-bottom: 0.5rem;
 }
 
-/* SECTION PADRÃO */
+/* SECTION */
 section {
     max-width: 1100px;
     margin: 2rem auto;
     background: #fff;
     padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
-/* GRID DE PRODUTOS */
+/* GRID */
 .produtos {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -94,21 +103,20 @@ section {
 /* CARD */
 .produto {
     background: #fafafa;
-    border: 1px solid #eee;
-    border-radius: 12px;
+    border-radius: 14px;
     padding: 1rem;
     text-align: center;
     transition: 0.3s;
     overflow: hidden;
 }
 
-/* EFEITO HOVER */
+/* HOVER */
 .produto:hover {
-    transform: translateY(-6px) scale(1.02);
-    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
-/* IMAGEM DO PRODUTO */
+/* IMG */
 .produto img {
     width: 100%;
     height: 160px;
@@ -118,27 +126,25 @@ section {
     transition: 0.3s;
 }
 
-/* ZOOM NA IMAGEM */
 .produto:hover img {
-    transform: scale(1.05);
+    transform: scale(1.08);
 }
 
 /* TITULO */
 .produto h3 {
     color: #b71c1c;
-    margin-bottom: 8px;
 }
 
-/* BOTÃO WHATSAPP DOS PRODUTOS */
+/* BOTÃO PRODUTO */
 .btn-produto {
     display: inline-block;
     margin-top: 10px;
-    padding: 8px 14px;
+    padding: 10px 16px;
     background: #25D366;
     color: #fff;
     text-decoration: none;
-    border-radius: 6px;
-    font-size: 0.9rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
     font-weight: bold;
     transition: 0.3s;
 }
@@ -158,8 +164,8 @@ section {
     background: #c62828;
     color: #fff;
     text-decoration: none;
-    padding: 0.8rem 1.5rem;
-    border-radius: 8px;
+    padding: 1rem 1.8rem;
+    border-radius: 10px;
     transition: 0.3s;
     font-weight: bold;
 }
@@ -168,7 +174,7 @@ section {
     background: #ff7043;
 }
 
-/* BOTÃO WHATSAPP FLUTUANTE */
+/* WHATS FLOAT */
 .whatsapp-float {
     position: fixed;
     bottom: 20px;
@@ -176,21 +182,21 @@ section {
     background: #25D366;
     color: white;
     font-size: 26px;
-    width: 55px;
-    height: 55px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
     transition: 0.3s;
     z-index: 1000;
 }
 
 .whatsapp-float:hover {
     background: #1ebe5d;
-    transform: scale(1.1);
+    transform: scale(1.15);
 }
 
 /* FOOTER */
@@ -201,3 +207,14 @@ footer {
     padding: 1.5rem 1rem;
     font-size: 0.9rem;
 }
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero {
+        padding: 70px 20px;
+    }
+    }
