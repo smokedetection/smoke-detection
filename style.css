@@ -54,13 +54,21 @@
     background: #1ebe5d;
 }
 
-/* BOTÃO SECUNDÁRIO */
-.btn-sec {
+/* BOTÃO SECUNDÁRIO (proporcional) */
+.btn-secondary {
+    display: inline-block;
+    padding: 10px 18px; /* menor que btn-whats */
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
     background: white;
     color: #c62828;
+    transition: 0.3s;
+    text-align: center;
+    font-size: 0.95rem;
 }
 
-.btn-sec:hover {
+.btn-secondary:hover {
     background: #eee;
 }
 
@@ -120,7 +128,7 @@ section {
 /* IMG DOS PRODUTOS (PROPORCIONAL) */
 .produto img {
     width: 100%;
-    max-height: 120px; /* agora mais proporcional */
+    max-height: 120px; /* mais proporcional */
     object-fit: cover;
     border-radius: 10px;
     margin-bottom: 12px;
@@ -224,7 +232,8 @@ footer {
         align-items: center;
     }
 
-    .btn-hero {
+    .btn-hero, .btn-secondary {
         width: 90%;
+        margin-bottom: 10px;
     }
-    }
+}
