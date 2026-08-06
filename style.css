@@ -1,267 +1,283 @@
-/* ======================= DARK MODE - STYLE.CSS ======================= */
+:root{
 
-/* BODY */
-body {
-    background: #111;
-    color: #eee;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
+--red:#ff3131;
+--dark:#0f1117;
+--card:#171a22;
+--text:#fff;
+--gray:#cfcfcf;
+
 }
 
-/* HERO */
-.hero {
-    background: linear-gradient(90deg, #c62828, #ff7043);
-    color: white;
-    text-align: center;
-    padding: 100px 20px;
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+
 }
 
-/* LOGO HERO 🔥 */
-.logo {
-    width: 160px;       /* tamanho da logo */
-    max-width: 80%;     /* responsivo */
-    height: auto;
-    margin-bottom: 20px;
-    object-fit: contain;
+body{
+
+background:#0d0f14;
+color:white;
+
 }
 
-.hero h1 {
-    font-size: 2.4rem;
-    max-width: 800px;
-    margin: auto;
+header{
+
+position:fixed;
+top:0;
+width:100%;
+background:rgba(0,0,0,.6);
+backdrop-filter:blur(10px);
+z-index:999;
+
 }
 
-.hero p {
-    margin-top: 15px;
-    font-size: 1.2rem;
+.container{
+
+width:90%;
+max-width:1200px;
+margin:auto;
+
 }
 
-/* AGRUPAMENTO DE BOTÕES */
-.hero-buttons {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 20px;
+.nav{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 0;
+
 }
 
-/* BOTÕES HERO */
-.btn-hero {
-    display: inline-block;
-    padding: 16px 26px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-    text-align: center;
+nav{
+
+display:flex;
+gap:30px;
+
 }
 
-/* BOTÃO WHATS (COM PULSO) */
-.btn-whats {
-    background: #25D366;
-    color: white;
-    animation: pulse 1.5s infinite;
+nav a{
+
+color:white;
+text-decoration:none;
+transition:.3s;
+
 }
 
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
+nav a:hover{
+
+color:var(--red);
+
 }
 
-.btn-whats:hover {
-    background: #1ebe5d;
+.logo{
+
+height:55px;
+
 }
 
-/* BOTÃO SECUNDÁRIO HERO */
-.btn-sec {
-    background: white;
-    color: #c62828;
-    font-weight: bold;
-    border: none;
+.btn-nav,
+.btn-primary{
+
+background:var(--red);
+color:white;
+padding:15px 30px;
+border-radius:40px;
+text-decoration:none;
+font-weight:600;
+transition:.3s;
+
 }
 
-.btn-sec:hover {
-    background: #eee;
+.btn-nav:hover,
+.btn-primary:hover{
+
+transform:translateY(-3px);
+box-shadow:0 15px 35px rgba(255,0,0,.4);
+
 }
 
-/* HEADER */
-header {
-    text-align: center;
-    background: linear-gradient(90deg, #c62828, #ff7043);
-    color: #fff;
-    padding: 2rem 1rem;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+.btn-secondary{
+
+border:2px solid white;
+padding:15px 30px;
+border-radius:40px;
+color:white;
+text-decoration:none;
+
 }
 
-header .logo {
-    width: 120px;
-    height: auto;
-    margin-bottom: 1rem;
+.hero{
+
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+background:url("../img/fire.jpg") center/cover;
+position:relative;
+
 }
 
-/* BOTÕES DO HEADER */
-header .hero-buttons .btn-hero {
-    margin: 0;
+.overlay{
+
+position:absolute;
+inset:0;
+background:rgba(0,0,0,.65);
+
 }
 
-/* SECTIONS */
-section {
-    max-width: 1100px;
-    margin: 2rem auto;
-    background: #1a1a1a;
-    padding: 2rem;
-    border-radius: 14px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-    color: #eee;
+.hero-content{
+
+position:relative;
+max-width:900px;
+text-align:center;
+z-index:2;
+
 }
 
-section h2 {
-    color: #fff;
+.hero h1{
+
+font-size:60px;
+margin-bottom:25px;
+
 }
 
-section ul li {
-    color: #ccc;
+.hero p{
+
+font-size:20px;
+color:#ddd;
+
 }
 
-/* GRID DE PRODUTOS */
-.produtos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
+.buttons{
+
+margin-top:40px;
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+
 }
 
-/* CARD */
-.produto {
-    background: #222;
-    border-radius: 14px;
-    padding: 1rem;
-    text-align: center;
-    transition: 0.3s;
-    overflow: hidden;
-    color: #fff;
+.section{
+
+padding:100px 10%;
+
 }
 
-/* HOVER CARD */
-.produto:hover {
-    transform: translateY(-8px) scale(1.03);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+.section h2{
+
+text-align:center;
+margin-bottom:60px;
+
 }
 
-.produto img {
-    width: 100%;
-    max-height: 120px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 12px;
-    transition: 0.3s;
+.cards{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+
 }
 
-.produto:hover img {
-    transform: scale(1.08);
+.card{
+
+background:var(--card);
+padding:40px;
+border-radius:18px;
+transition:.4s;
+text-align:center;
+
 }
 
-/* TITULO DOS PRODUTOS */
-.produto h3 {
-    color: #ff7043;
+.card i{
+
+font-size:45px;
+color:var(--red);
+margin-bottom:20px;
+
 }
 
-/* BOTÃO PRODUTO */
-.btn-produto {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 16px;
-    background: #25D366;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 8px;
-    font-size: 0.95rem;
-    font-weight: bold;
-    transition: 0.3s;
+.card:hover{
+
+transform:translateY(-10px);
+
 }
 
-.btn-produto:hover {
-    background: #1ebe5d;
-    transform: scale(1.05);
+.numbers{
+
+display:flex;
+justify-content:space-around;
+padding:80px;
+background:#12151d;
+
 }
 
-/* BOTÃO PADRÃO */
-.btn-container {
-    text-align: center;
-    margin: 2rem 0;
+.numbers h2{
+
+font-size:50px;
+color:var(--red);
+
 }
 
-.btn {
-    background: #c62828;
-    color: #fff;
-    text-decoration: none;
-    padding: 1rem 1.8rem;
-    border-radius: 10px;
-    transition: 0.3s;
-    font-weight: bold;
+.cta{
+
+padding:120px 10%;
+text-align:center;
+background:linear-gradient(90deg,#8b0000,#ff3131);
+
 }
 
-.btn:hover {
-    background: #ff7043;
+footer{
+
+padding:40px;
+text-align:center;
+background:black;
+
 }
 
-/* WHATSAPP FLUTUANTE */
-.whatsapp-float {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #25D366;
-    color: white;
-    font-size: 26px;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-    transition: 0.3s;
-    z-index: 1000;
+.whatsapp{
+
+position:fixed;
+bottom:25px;
+right:25px;
+background:#25d366;
+width:65px;
+height:65px;
+display:flex;
+justify-content:center;
+align-items:center;
+border-radius:50%;
+color:white;
+font-size:30px;
+text-decoration:none;
+box-shadow:0 15px 40px rgba(0,0,0,.4);
+
 }
 
-.whatsapp-float:hover {
-    background: #1ebe5d;
-    transform: scale(1.15);
+@media(max-width:768px){
+
+.hero h1{
+
+font-size:38px;
+
 }
 
-/* FOOTER */
-footer {
-    text-align: center;
-    background: #000;
-    color: #ccc;
-    padding: 1.5rem 1rem;
-    font-size: 0.9rem;
+nav{
+
+display:none;
+
 }
 
-/* RESPONSIVO */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 1.8rem;
-    }
+.numbers{
 
-    .hero {
-        padding: 70px 20px;
-    }
+flex-direction:column;
+gap:40px;
+text-align:center;
 
-    .hero-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
+}
 
-    .btn-hero {
-        width: 90%;
-    }
-
-    /* LOGO MENOR NO CELULAR */
-    .logo {
-        width: 130px;
-    }
-    }
+}
