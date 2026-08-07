@@ -1,31 +1,220 @@
-// Scroll suave
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener("click", function(e) {
+/*==========================================
+SMOKE DETECTION
+script.js
+==========================================*/
 
-        e.preventDefault();
+document.addEventListener("DOMContentLoaded", () => {
 
-        document.querySelector(this.getAttribute("href"))
-            .scrollIntoView({
-                behavior: "smooth"
-            });
+    /*==============================
+      NAVBAR
+    ==============================*/
 
-    });
-});
+    const header = document.querySelector("header");
 
-// Revelar elementos ao rolar
+    window.addEventListener("scroll", () => {
 
-const observer = new IntersectionObserver(entries => {
+        if (window.scrollY > 80) {
 
-    entries.forEach(entry => {
+            header.style.background = "rgba(8,8,8,.96)";
+            header.style.boxShadow = "0 10px 30px rgba(0,0,0,.35)";
+            header.style.padding = "0";
 
-        if(entry.isIntersecting){
+        } else {
 
-            entry.target.classList.add("show");
+            header.style.background = "rgba(0,0,0,.55)";
+            header.style.boxShadow = "none";
 
         }
 
     });
 
-});
+    /*==============================
+      REVEAL SCROLL
+    ==============================*/
 
-document.querySelectorAll(".card").forEach(card=>observer.observe(card));
+    const reveals = document.querySelectorAll(".fade,.left,.right,.zoom");
+
+    const reveal = () => {
+
+        const windowHeight = window.innerHeight;
+
+        reveals.forEach(el => {
+
+            const top = el.getBoundingClientRect().top;
+
+            if (top < windowHeight - 120) {
+
+                el.classList.add("show");
+
+            }
+
+        });
+
+    };
+
+    reveal();
+
+    window.addEventListener("scroll", reveal);
+
+    /*==============================
+      CONTADORES
+    ==============================*/
+
+    const counters = document.querySelectorAll(".counter");
+
+    const startCounters = () => {
+
+        counters.forEach(counter => {
+
+            if (counter.dataset.started) return;
+
+            const top = counter.getBoundingClientRect().top;
+
+            if (top < window.innerHeight - 80) {
+
+                counter.dataset.started = "true";
+
+                const target = Number(counter.dataset.target);
+
+                let current = 0;
+
+                const increment = Math.max(1, Math.ceil(target / 70));
+
+                const timer = setInterval(() => {
+
+                    current += increment;
+
+                    if (current >= target) {
+
+                        current = target;
+
+                        clearInterval(timer);
+
+                    }
+
+                    if (target >= 100) {
+
+                        counter.textContent = current + "%";
+
+                    } else {
+
+                        counter.textContent = current + "+";
+
+                    }
+
+                }, 25);
+
+            }
+
+        });
+
+    };
+
+    startCounters();
+
+    window.addEventListener("scroll", startCounters);
+
+    /*==============================
+      SCROLL SUAVE
+    ==============================*/
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+        anchor.addEventListener("click", function(e){
+
+            const target = document.querySelector(this.getAttribute("href"));
+
+            if(target){
+
+                e.preventDefault();
+
+                target.scrollIntoView({
+
+                    behavior:"smooth"
+
+                });
+
+            }
+
+        });
+
+    });
+
+    /*==============================
+      BOTÕES
+    ==============================*/
+
+    document.querySelectorAll(".btn-primary,.btn-secondary,.btn-nav").forEach(btn=>{
+
+        btn.addEventListener("mouseenter",()=>{
+
+            btn.style.transform="translateY(-4px) scale(1.02)";
+
+        });
+
+        btn.addEventListener("mouseleave",()=>{
+
+            btn.style.transform="translateY(0) scale(1)";
+
+        });
+
+    });
+
+    /*==============================
+      WHATSAPP
+    ==============================*/
+
+    const whatsapp = document.querySelector(".whatsapp");
+
+    if(whatsapp){
+
+        setTimeout(()=>{
+
+            whatsapp.animate([
+
+                {transform:"scale(1)"},
+
+                {transform:"scale(1.12)"},
+
+                {transform:"scale(1)"}
+
+            ],{
+
+                duration:800
+
+            });
+
+        },1800);
+
+    }
+
+    /*==============================
+      CARDS
+    ==============================*/
+
+    document.querySelectorAll(".card").forEach(card=>{
+
+        card.addEventListener("mousemove",(e)=>{
+
+            const rect=card.getBoundingClientRect();
+
+            const x=e.clientX-rect.left;
+
+            const y=e.clientY-rect.top;
+
+            card.style.background=
+            `radial-gradient(circle at ${x}px ${y}px,
+            rgba(255,59,48,.12),
+            rgba(255,255,255,.04) 60%)`;
+
+        });
+
+        card.addEventListener("mouseleave",()=>{
+
+            card.style.background="rgba(255,255,255,.04)";
+
+        });
+
+    });
+
+});
