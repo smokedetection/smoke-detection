@@ -1,6 +1,6 @@
 /* ======================================================
    SMOKE DETECTION
-   STYLE.CSS — V4.0
+   STYLE.CSS — V3.0
    ====================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
@@ -11,32 +11,33 @@
    ====================================================== */
 
 :root {
+
     --primary: #ff3131;
     --primary-light: #ff625a;
     --primary-dark: #a90000;
 
     --background: #070707;
-    --background-2: #0d0d0d;
+    --background-2: #0e0e0e;
     --background-3: #141414;
 
-    --card: rgba(255,255,255,0.045);
-    --card-hover: rgba(255,255,255,0.075);
+    --card: rgba(255, 255, 255, 0.045);
+    --card-hover: rgba(255, 255, 255, 0.07);
 
     --text: #ffffff;
     --text-soft: #e8e8e8;
     --gray: #b7b7b7;
     --gray-dark: #858585;
 
-    --border: rgba(255,255,255,0.09);
-    --border-hover: rgba(255,49,49,0.45);
+    --border: rgba(255, 255, 255, 0.09);
+    --border-hover: rgba(255, 49, 49, 0.45);
 
-    --shadow: 0 20px 55px rgba(0,0,0,0.35);
-    --shadow-red: 0 20px 50px rgba(255,49,49,0.20);
+    --shadow: 0 20px 55px rgba(0, 0, 0, 0.35);
+    --shadow-red: 0 20px 50px rgba(255, 49, 49, 0.20);
 
     --radius: 20px;
     --radius-small: 14px;
 
-    --transition: .35s ease;
+    --transition: 0.35s ease;
 }
 
 
@@ -49,12 +50,15 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
+    scroll-behavior: smooth;
 }
+
 
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
 }
+
 
 body {
     background: var(--background);
@@ -63,33 +67,10 @@ body {
     overflow-x: hidden;
 }
 
+
 ::selection {
     background: var(--primary);
-    color: #fff;
-}
-
-img {
-    max-width: 100%;
-    display: block;
-}
-
-a {
-    color: #fff;
-    text-decoration: none;
-}
-
-button,
-a {
-    -webkit-tap-highlight-color: transparent;
-}
-
-section {
-    padding: 110px 8%;
-}
-
-.container {
-    width: min(1200px, 92%);
-    margin: 0 auto;
+    color: #ffffff;
 }
 
 
@@ -101,9 +82,11 @@ section {
     width: 9px;
 }
 
+
 ::-webkit-scrollbar-track {
-    background: #080808;
+    background: #0b0b0b;
 }
+
 
 ::-webkit-scrollbar-thumb {
     background: linear-gradient(
@@ -114,8 +97,42 @@ section {
     border-radius: 20px;
 }
 
+
 ::-webkit-scrollbar-thumb:hover {
     background: var(--primary-light);
+}
+
+
+/* ======================================================
+   ELEMENTOS GERAIS
+   ====================================================== */
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+section {
+    padding: 120px 8%;
+}
+
+
+.container {
+    width: min(1200px, 92%);
+    margin: 0 auto;
 }
 
 
@@ -130,30 +147,28 @@ header {
     width: 100%;
     z-index: 9999;
 
-    background: rgba(5,5,5,.78);
+    background: rgba(5, 5, 5, 0.68);
 
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
 
-    border-bottom: 1px solid rgba(255,255,255,.07);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
 
     transition:
-        background .35s ease,
-        box-shadow .35s ease,
-        border-color .35s ease;
+        background 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
 }
 
-.nav {
-    width: min(1200px, 92%);
-    min-height: 82px;
 
-    margin: 0 auto;
+.nav {
+    min-height: 86px;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    gap: 28px;
+    gap: 30px;
 }
 
 
@@ -162,14 +177,15 @@ header {
    ====================================================== */
 
 .logo {
-    height: 56px;
+    height: 58px;
     width: auto;
     object-fit: contain;
 
     transition:
-        transform .35s ease,
-        filter .35s ease;
+        transform 0.35s ease,
+        filter 0.35s ease;
 }
+
 
 .logo:hover {
     transform: scale(1.05);
@@ -184,23 +200,25 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 30px;
+    gap: 32px;
 }
+
 
 nav a {
     position: relative;
 
-    color: #fff;
+    color: #ffffff;
 
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 500;
 
     white-space: nowrap;
 
     transition:
-        color .3s ease,
-        transform .3s ease;
+        color 0.3s ease,
+        transform 0.3s ease;
 }
+
 
 nav a::after {
     content: "";
@@ -208,23 +226,25 @@ nav a::after {
     position: absolute;
 
     left: 50%;
-    bottom: -8px;
+    bottom: -9px;
 
     width: 0;
     height: 2px;
 
-    border-radius: 20px;
+    border-radius: 10px;
 
     background: var(--primary);
 
     transform: translateX(-50%);
 
-    transition: width .3s ease;
+    transition: width 0.3s ease;
 }
+
 
 nav a:hover {
     color: var(--primary-light);
 }
+
 
 nav a:hover::after {
     width: 100%;
@@ -232,19 +252,20 @@ nav a:hover::after {
 
 
 /* ======================================================
-   BOTÃO NAV
+   BOTÃO NAVBAR
    ====================================================== */
 
 .btn-nav {
     display: inline-flex;
+
     align-items: center;
     justify-content: center;
 
-    gap: 8px;
+    gap: 9px;
 
-    min-height: 46px;
+    min-height: 48px;
 
-    padding: 11px 21px;
+    padding: 12px 24px;
 
     border-radius: 50px;
 
@@ -255,33 +276,35 @@ nav a:hover::after {
             var(--primary-dark)
         );
 
-    color: #fff;
+    color: #ffffff;
 
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 600;
 
     white-space: nowrap;
 
     box-shadow:
-        0 10px 30px rgba(255,49,49,.20);
+        0 10px 30px rgba(255, 49, 49, 0.20);
 
     transition:
-        transform .35s ease,
-        box-shadow .35s ease,
-        filter .35s ease;
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        filter 0.35s ease;
 }
+
 
 .btn-nav:hover {
     transform: translateY(-3px);
 
     box-shadow:
-        0 16px 40px rgba(255,49,49,.38);
+        0 16px 40px rgba(255, 49, 49, 0.38);
 
     filter: brightness(1.08);
 }
 
+
 .btn-nav:active {
-    transform: scale(.97);
+    transform: scale(0.97);
 }
 
 
@@ -296,26 +319,27 @@ nav a:hover::after {
     align-items: center;
     justify-content: center;
 
-    gap: 9px;
+    gap: 10px;
 
-    min-height: 52px;
+    min-height: 54px;
 
-    padding: 13px 28px;
+    padding: 14px 30px;
 
     border-radius: 50px;
 
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 600;
 
     text-align: center;
 
     transition:
-        transform .35s ease,
-        box-shadow .35s ease,
-        background .35s ease,
-        color .35s ease,
-        border-color .35s ease;
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        background 0.35s ease,
+        color 0.35s ease,
+        border-color 0.35s ease;
 }
+
 
 .btn-primary {
     background:
@@ -325,45 +349,49 @@ nav a:hover::after {
             #c40000
         );
 
-    color: #fff;
+    color: #ffffff;
 
     box-shadow:
-        0 12px 30px rgba(255,49,49,.25);
+        0 12px 30px rgba(255, 49, 49, 0.25);
 }
+
 
 .btn-primary:hover {
     transform: translateY(-4px);
 
     box-shadow:
-        0 20px 45px rgba(255,49,49,.42);
+        0 20px 45px rgba(255, 49, 49, 0.42);
 }
 
+
 .btn-secondary {
-    border: 1px solid rgba(255,255,255,.28);
+    border: 1px solid rgba(255, 255, 255, 0.28);
 
-    background: rgba(255,255,255,.025);
+    background: rgba(255, 255, 255, 0.025);
 
-    color: #fff;
+    color: #ffffff;
 
     backdrop-filter: blur(8px);
 }
 
+
 .btn-secondary:hover {
-    background: #fff;
+    background: #ffffff;
 
-    border-color: #fff;
+    border-color: #ffffff;
 
-    color: #111;
+    color: #111111;
 
     transform: translateY(-4px);
 
     box-shadow:
-        0 15px 35px rgba(0,0,0,.3);
+        0 15px 35px rgba(0, 0, 0, 0.3);
 }
+
 
 .btn-primary:active,
 .btn-secondary:active {
-    transform: scale(.97);
+    transform: scale(0.97);
 }
 
 
@@ -377,6 +405,7 @@ nav a:hover::after {
     min-height: 100vh;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -388,12 +417,13 @@ nav a:hover::after {
 
     background:
         linear-gradient(
-            rgba(5,5,5,.76),
-            rgba(5,5,5,.88)
+            rgba(5, 5, 5, 0.76),
+            rgba(5, 5, 5, 0.86)
         ),
         url("fumaca.jpg")
         center center / cover no-repeat;
 }
+
 
 .hero::before {
     content: "";
@@ -411,14 +441,16 @@ nav a:hover::after {
     background:
         radial-gradient(
             circle,
-            rgba(255,49,49,.20),
+            rgba(255, 49, 49, 0.20),
             transparent 68%
         );
 
     pointer-events: none;
 
-    animation: heroPulse 7s ease-in-out infinite;
+    animation:
+        heroPulse 7s ease-in-out infinite;
 }
+
 
 .hero::after {
     content: "";
@@ -436,17 +468,20 @@ nav a:hover::after {
     background:
         radial-gradient(
             circle,
-            rgba(255,255,255,.045),
+            rgba(255, 255, 255, 0.045),
             transparent 68%
         );
 
     pointer-events: none;
 
-    animation: heroPulseSecondary 9s ease-in-out infinite;
+    animation:
+        heroPulseSecondary 9s ease-in-out infinite;
 }
+
 
 .hero-content {
     position: relative;
+
     z-index: 5;
 
     width: 100%;
@@ -454,17 +489,19 @@ nav a:hover::after {
 
     margin: 0 auto;
 
-    animation: fadeUp 1s ease both;
+    animation:
+        fadeUp 1s ease both;
 }
+
 
 .hero-content > span {
     display: inline-block;
 
-    margin-bottom: 18px;
+    margin-bottom: 20px;
 
     color: var(--primary-light);
 
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 700;
 
     letter-spacing: 2px;
@@ -472,12 +509,13 @@ nav a:hover::after {
     text-transform: uppercase;
 }
 
+
 .hero h1 {
-    margin-bottom: 24px;
+    margin-bottom: 25px;
 
-    color: #fff;
+    color: #ffffff;
 
-    font-size: clamp(40px,5.3vw,66px);
+    font-size: clamp(42px, 5.3vw, 68px);
 
     font-weight: 800;
 
@@ -486,17 +524,19 @@ nav a:hover::after {
     letter-spacing: -1.5px;
 }
 
-.hero p {
-    width: min(760px,100%);
 
-    margin: 0 auto 40px;
+.hero p {
+    width: min(760px, 100%);
+
+    margin: 0 auto 42px;
 
     color: #d5d5d5;
 
-    font-size: clamp(15px,1.7vw,20px);
+    font-size: clamp(16px, 1.7vw, 21px);
 
     line-height: 1.8;
 }
+
 
 .buttons {
     display: flex;
@@ -504,7 +544,7 @@ nav a:hover::after {
     align-items: center;
     justify-content: center;
 
-    gap: 15px;
+    gap: 16px;
 
     flex-wrap: wrap;
 }
@@ -515,6 +555,7 @@ nav a:hover::after {
    ====================================================== */
 
 @keyframes fadeUp {
+
     from {
         opacity: 0;
         transform: translateY(35px);
@@ -524,30 +565,37 @@ nav a:hover::after {
         opacity: 1;
         transform: translateY(0);
     }
+
 }
 
+
 @keyframes heroPulse {
+
     0%,
     100% {
         transform: scale(1);
-        opacity: .8;
+        opacity: 0.8;
     }
 
     50% {
         transform: scale(1.15);
         opacity: 1;
     }
+
 }
 
+
 @keyframes heroPulseSecondary {
+
     0%,
     100% {
         transform: scale(1);
     }
 
     50% {
-        transform: scale(.88);
+        transform: scale(0.88);
     }
+
 }
 
 
@@ -558,12 +606,13 @@ nav a:hover::after {
 .section {
     position: relative;
 
-    padding: 110px 8%;
+    padding: 120px 8%;
 
     background: var(--background);
 
     overflow: hidden;
 }
+
 
 .section:nth-of-type(even) {
     background:
@@ -574,14 +623,15 @@ nav a:hover::after {
         );
 }
 
+
 .section h2 {
     position: relative;
 
-    margin-bottom: 18px;
+    margin-bottom: 20px;
 
-    color: #fff;
+    color: #ffffff;
 
-    font-size: clamp(30px,4vw,44px);
+    font-size: clamp(30px, 4vw, 46px);
 
     font-weight: 800;
 
@@ -589,8 +639,9 @@ nav a:hover::after {
 
     text-align: center;
 
-    letter-spacing: -.8px;
+    letter-spacing: -0.8px;
 }
+
 
 .section h2::after {
     content: "";
@@ -600,7 +651,7 @@ nav a:hover::after {
     width: 55px;
     height: 3px;
 
-    margin: 17px auto 0;
+    margin: 18px auto 0;
 
     border-radius: 20px;
 
@@ -612,14 +663,15 @@ nav a:hover::after {
         );
 }
 
-.subtitle {
-    width: min(760px,100%);
 
-    margin: 0 auto 50px;
+.subtitle {
+    width: min(760px, 100%);
+
+    margin: 0 auto 55px;
 
     color: var(--gray);
 
-    font-size: 15px;
+    font-size: 16px;
 
     line-height: 1.8;
 
@@ -632,7 +684,7 @@ nav a:hover::after {
    ====================================================== */
 
 .cards {
-    width: min(1200px,100%);
+    width: min(1200px, 100%);
 
     margin: 0 auto;
 
@@ -641,22 +693,23 @@ nav a:hover::after {
     grid-template-columns:
         repeat(
             auto-fit,
-            minmax(250px,1fr)
+            minmax(250px, 1fr)
         );
 
     gap: 24px;
 }
 
+
 .card {
     position: relative;
 
-    padding: 36px 28px;
+    padding: 38px 30px;
 
     background:
         linear-gradient(
             145deg,
-            rgba(255,255,255,.065),
-            rgba(255,255,255,.025)
+            rgba(255, 255, 255, 0.065),
+            rgba(255, 255, 255, 0.025)
         );
 
     border: 1px solid var(--border);
@@ -666,16 +719,17 @@ nav a:hover::after {
     text-align: center;
 
     box-shadow:
-        0 15px 45px rgba(0,0,0,.20);
+        0 15px 45px rgba(0, 0, 0, 0.20);
 
     overflow: hidden;
 
     transition:
-        transform .4s ease,
-        border-color .4s ease,
-        background .4s ease,
-        box-shadow .4s ease;
+        transform 0.4s ease,
+        border-color 0.4s ease,
+        background 0.4s ease,
+        box-shadow 0.4s ease;
 }
+
 
 .card::before {
     content: "";
@@ -693,22 +747,23 @@ nav a:hover::after {
     background:
         radial-gradient(
             circle,
-            rgba(255,49,49,.14),
+            rgba(255, 49, 49, 0.14),
             transparent 70%
         );
 
     transition:
-        transform .5s ease;
+        transform 0.5s ease;
 }
 
+
 .card:hover {
-    transform: translateY(-9px);
+    transform: translateY(-10px);
 
     background:
         linear-gradient(
             145deg,
-            rgba(255,255,255,.09),
-            rgba(255,255,255,.035)
+            rgba(255, 255, 255, 0.09),
+            rgba(255, 255, 255, 0.035)
         );
 
     border-color: var(--border-hover);
@@ -718,12 +773,15 @@ nav a:hover::after {
         var(--shadow-red);
 }
 
+
 .card:hover::before {
     transform: scale(1.8);
 }
 
+
 .card i {
     position: relative;
+
     z-index: 2;
 
     display: inline-flex;
@@ -731,28 +789,29 @@ nav a:hover::after {
     align-items: center;
     justify-content: center;
 
-    width: 70px;
-    height: 70px;
+    width: 72px;
+    height: 72px;
 
-    margin-bottom: 20px;
+    margin-bottom: 22px;
 
-    border-radius: 19px;
+    border-radius: 20px;
 
     background:
-        rgba(255,49,49,.10);
+        rgba(255, 49, 49, 0.10);
 
     border:
-        1px solid rgba(255,49,49,.18);
+        1px solid rgba(255, 49, 49, 0.18);
 
     color: var(--primary);
 
-    font-size: 29px;
+    font-size: 30px;
 
     transition:
-        transform .4s ease,
-        background .4s ease,
-        color .4s ease;
+        transform 0.4s ease,
+        background 0.4s ease,
+        color 0.4s ease;
 }
+
 
 .card:hover i {
     transform:
@@ -761,39 +820,42 @@ nav a:hover::after {
 
     background: var(--primary);
 
-    color: #fff;
+    color: #ffffff;
 }
+
 
 .card h3 {
     position: relative;
+
     z-index: 2;
 
-    margin-bottom: 11px;
+    margin-bottom: 13px;
 
-    color: #fff;
+    color: #ffffff;
 
-    font-size: 19px;
+    font-size: 20px;
+
     font-weight: 700;
 }
 
+
 .card p {
     position: relative;
+
     z-index: 2;
 
     color: var(--gray);
 
-    font-size: 13px;
+    font-size: 14px;
 
     line-height: 1.8;
 }
-
-
 /* ======================================================
-   PRODUTOS
+   PRODUTOS / SISTEMAS
    ====================================================== */
 
 .produtos {
-    width: min(1200px,92%);
+    width: min(1200px, 92%);
 
     margin: 0 auto;
 
@@ -802,23 +864,25 @@ nav a:hover::after {
     grid-template-columns:
         repeat(
             auto-fit,
-            minmax(260px,1fr)
+            minmax(260px, 1fr)
         );
 
     gap: 28px;
 }
 
+
 .produto {
     position: relative;
 
     display: flex;
+
     flex-direction: column;
 
     background:
         linear-gradient(
             145deg,
-            rgba(255,255,255,.065),
-            rgba(255,255,255,.025)
+            rgba(255, 255, 255, 0.065),
+            rgba(255, 255, 255, 0.025)
         );
 
     border:
@@ -827,18 +891,19 @@ nav a:hover::after {
     border-radius:
         var(--radius);
 
-    padding: 19px;
+    padding: 20px;
 
     overflow: hidden;
 
     box-shadow:
-        0 15px 45px rgba(0,0,0,.20);
+        0 15px 45px rgba(0, 0, 0, 0.20);
 
     transition:
-        transform .4s ease,
-        border-color .4s ease,
-        box-shadow .4s ease;
+        transform 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
 }
+
 
 .produto:hover {
     transform: translateY(-9px);
@@ -851,50 +916,55 @@ nav a:hover::after {
         var(--shadow-red);
 }
 
+
 .produto img {
     width: 100%;
 
-    height: 225px;
+    height: 230px;
 
     object-fit: cover;
 
     border-radius:
         var(--radius-small);
 
-    margin-bottom: 20px;
+    margin-bottom: 22px;
 
     transition:
-        transform .5s ease;
+        transform 0.5s ease;
 }
+
 
 .produto:hover img {
-    transform: scale(1.035);
+    transform: scale(1.04);
 }
 
+
 .produto h3 {
-    margin-bottom: 9px;
+    margin-bottom: 10px;
 
-    color: #fff;
+    color: #ffffff;
 
-    font-size: 19px;
+    font-size: 20px;
+
     font-weight: 700;
 }
 
-.produto p {
-    min-height: 70px;
 
-    margin-bottom: 19px;
+.produto p {
+    min-height: 75px;
+
+    margin-bottom: 20px;
 
     color: var(--gray);
 
-    font-size: 13px;
+    font-size: 14px;
 
     line-height: 1.7;
 }
 
 
 /* ======================================================
-   BOTÕES PRODUTOS
+   BOTÕES DOS PRODUTOS
    ====================================================== */
 
 .produto-buttons {
@@ -902,14 +972,58 @@ nav a:hover::after {
 
     flex-direction: column;
 
-    gap: 11px;
+    gap: 12px;
 
     width: 100%;
 
     margin-top: auto;
 }
 
-.produto-buttons .btn-secondary,
+
+.produto-buttons .btn-secondary {
+    width: 100%;
+
+    min-height: 48px;
+
+    padding: 12px 18px;
+
+    border-radius: 12px;
+
+    font-size: 14px;
+}
+
+
+.produto-buttons .btn-secondary {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    background:
+        rgba(255, 255, 255, 0.05);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.25);
+
+    color: #ffffff;
+
+    cursor: pointer;
+}
+
+
+.produto-buttons .btn-secondary:hover {
+    background: #ffffff;
+
+    color: #111111;
+
+    border-color: #ffffff;
+
+    transform: translateY(-3px);
+}
+
+
 .btn-produto {
     display: flex;
 
@@ -920,39 +1034,12 @@ nav a:hover::after {
 
     width: 100%;
 
-    min-height: 47px;
+    min-height: 48px;
 
-    padding: 11px 18px;
+    padding: 12px 18px;
 
     border-radius: 12px;
 
-    font-size: 13px;
-    font-weight: 600;
-
-    cursor: pointer;
-}
-
-.produto-buttons .btn-secondary {
-    background:
-        rgba(255,255,255,.05);
-
-    border:
-        1px solid rgba(255,255,255,.25);
-
-    color: #fff;
-}
-
-.produto-buttons .btn-secondary:hover {
-    background: #fff;
-
-    color: #111;
-
-    border-color: #fff;
-
-    transform: translateY(-3px);
-}
-
-.btn-produto {
     background:
         linear-gradient(
             135deg,
@@ -960,19 +1047,24 @@ nav a:hover::after {
             var(--primary-dark)
         );
 
-    color: #fff;
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 600;
 
     transition:
-        transform .3s ease,
-        box-shadow .3s ease,
-        filter .3s ease;
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        filter 0.3s ease;
 }
+
 
 .btn-produto:hover {
     transform: translateY(-3px);
 
     box-shadow:
-        0 12px 30px rgba(255,49,49,.30);
+        0 12px 30px rgba(255, 49, 49, 0.30);
 
     filter: brightness(1.08);
 }
@@ -991,9 +1083,11 @@ nav a:hover::after {
         );
 }
 
+
 .catalogos-section .cards {
     align-items: stretch;
 }
+
 
 .catalogos-section .card {
     display: flex;
@@ -1005,9 +1099,11 @@ nav a:hover::after {
     justify-content: flex-start;
 }
 
+
 .catalogos-section .card p {
     margin-bottom: 28px;
 }
+
 
 .catalogos-section .card .btn-primary {
     width: 100%;
@@ -1016,6 +1112,7 @@ nav a:hover::after {
 
     margin-top: auto;
 }
+
 
 .catalogos-section .card br {
     display: none;
@@ -1027,10 +1124,11 @@ nav a:hover::after {
    ====================================================== */
 
 .btn-container {
-    width: min(1200px,92%);
+    width: min(1200px, 92%);
 
-    margin: 115px auto 0;
+    margin: 125px auto 0;
 }
+
 
 .btn {
     display: inline-flex;
@@ -1040,37 +1138,39 @@ nav a:hover::after {
 
     gap: 8px;
 
-    min-height: 45px;
+    min-height: 46px;
 
-    padding: 10px 19px;
+    padding: 11px 20px;
 
     border:
-        1px solid rgba(255,255,255,.15);
+        1px solid rgba(255, 255, 255, 0.15);
 
     border-radius: 50px;
 
     background:
-        rgba(255,255,255,.04);
+        rgba(255, 255, 255, 0.04);
 
-    color: #fff;
+    color: #ffffff;
 
-    font-size: 13px;
+    font-size: 14px;
+
     font-weight: 500;
 
     backdrop-filter: blur(10px);
 
     transition:
-        background .3s ease,
-        border-color .3s ease,
-        transform .3s ease;
+        background 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
 }
+
 
 .btn:hover {
     background:
-        rgba(255,49,49,.12);
+        rgba(255, 49, 49, 0.12);
 
     border-color:
-        rgba(255,49,49,.35);
+        rgba(255, 49, 49, 0.35);
 
     transform: translateX(-4px);
 }
@@ -1085,12 +1185,12 @@ nav a:hover::after {
 
     width: 100%;
 
-    padding: 80px 8%;
+    padding: 85px 8%;
 
     display: grid;
 
     grid-template-columns:
-        repeat(4,1fr);
+        repeat(4, 1fr);
 
     gap: 30px;
 
@@ -1102,13 +1202,14 @@ nav a:hover::after {
         );
 
     border-top:
-        1px solid rgba(255,255,255,.06);
+        1px solid rgba(255, 255, 255, 0.06);
 
     border-bottom:
-        1px solid rgba(255,255,255,.06);
+        1px solid rgba(255, 255, 255, 0.06);
 
     overflow: hidden;
 }
+
 
 .numbers::before {
     content: "";
@@ -1122,26 +1223,29 @@ nav a:hover::after {
     top: 50%;
 
     transform:
-        translate(-50%,-50%);
+        translate(-50%, -50%);
 
     border-radius: 50%;
 
     background:
         radial-gradient(
             circle,
-            rgba(255,49,49,.08),
+            rgba(255, 49, 49, 0.08),
             transparent 70%
         );
 
     pointer-events: none;
 }
 
+
 .number {
     position: relative;
+
     z-index: 2;
 
     text-align: center;
 }
+
 
 .number h2 {
     margin-bottom: 8px;
@@ -1149,17 +1253,19 @@ nav a:hover::after {
     color: var(--primary);
 
     font-size:
-        clamp(38px,5vw,56px);
+        clamp(38px, 5vw, 56px);
 
     font-weight: 800;
 
     line-height: 1;
 }
 
+
 .number span {
     color: var(--gray);
 
-    font-size: 13px;
+    font-size: 14px;
+
     font-weight: 500;
 }
 
@@ -1171,7 +1277,7 @@ nav a:hover::after {
 .cta {
     position: relative;
 
-    padding: 115px 8%;
+    padding: 120px 8%;
 
     text-align: center;
 
@@ -1185,6 +1291,7 @@ nav a:hover::after {
 
     overflow: hidden;
 }
+
 
 .cta::before {
     content: "";
@@ -1200,8 +1307,9 @@ nav a:hover::after {
     border-radius: 50%;
 
     background:
-        rgba(255,255,255,.08);
+        rgba(255, 255, 255, 0.08);
 }
+
 
 .cta::after {
     content: "";
@@ -1217,8 +1325,9 @@ nav a:hover::after {
     border-radius: 50%;
 
     background:
-        rgba(0,0,0,.12);
+        rgba(0, 0, 0, 0.12);
 }
+
 
 .cta .container {
     position: relative;
@@ -1226,62 +1335,68 @@ nav a:hover::after {
     z-index: 2;
 }
 
-.cta h2 {
-    margin-bottom: 17px;
 
-    color: #fff;
+.cta h2 {
+    margin-bottom: 18px;
+
+    color: #ffffff;
 
     font-size:
-        clamp(31px,4vw,47px);
+        clamp(32px, 4vw, 48px);
 
     font-weight: 800;
 
     line-height: 1.2;
 }
 
-.cta p {
-    width: min(700px,100%);
 
-    margin: 0 auto 33px;
+.cta p {
+    width: min(700px, 100%);
+
+    margin: 0 auto 35px;
 
     color:
-        rgba(255,255,255,.88);
+        rgba(255, 255, 255, 0.88);
 
-    font-size: 15px;
+    font-size: 16px;
 
     line-height: 1.8;
 }
 
+
 .cta .btn-primary {
-    background: #fff;
+    background: #ffffff;
 
     color: #a50000;
 
     box-shadow:
-        0 15px 35px rgba(0,0,0,.20);
+        0 15px 35px rgba(0, 0, 0, 0.20);
 }
 
+
 .cta .btn-primary:hover {
-    background: #fff;
+    background: #ffffff;
 
     color: #750000;
 
     box-shadow:
-        0 20px 45px rgba(0,0,0,.30);
+        0 20px 45px rgba(0, 0, 0, 0.30);
 }
+
 
 .cta .btn-secondary {
     border-color:
-        rgba(255,255,255,.55);
+        rgba(255, 255, 255, 0.55);
 
     background:
-        rgba(0,0,0,.10);
+        rgba(0, 0, 0, 0.10);
 }
 
-.cta .btn-secondary:hover {
-    border-color: #fff;
 
-    background: #fff;
+.cta .btn-secondary:hover {
+    border-color: #ffffff;
+
+    background: #ffffff;
 
     color: #8b0000;
 }
@@ -1295,14 +1410,15 @@ footer {
     position: relative;
 
     padding:
-        70px 8% 25px;
+        75px 8% 25px;
 
     background:
         #050505;
 
     border-top:
-        1px solid rgba(255,255,255,.07);
+        1px solid rgba(255, 255, 255, 0.07);
 }
+
 
 .footer-grid {
     display: grid;
@@ -1313,55 +1429,64 @@ footer {
         1.3fr
         1fr;
 
-    gap: 42px;
+    gap: 45px;
 
-    padding-bottom: 48px;
+    padding-bottom: 50px;
 }
+
 
 .footer-grid > div {
     min-width: 0;
 }
 
+
 .footer-grid .logo {
-    height: 56px;
+    height: 58px;
 }
 
+
 .footer-grid h3 {
-    margin-bottom: 18px;
+    margin-bottom: 20px;
 
-    color: #fff;
+    color: #ffffff;
 
-    font-size: 15px;
+    font-size: 16px;
+
     font-weight: 700;
 }
 
+
 .footer-grid p {
-    margin-bottom: 8px;
+    margin-bottom: 9px;
 
     color: var(--gray);
 
-    font-size: 12px;
+    font-size: 13px;
 
     line-height: 1.7;
 }
+
 
 .footer-grid p:last-child {
     margin-bottom: 0;
 }
 
+
 .footer-grid a {
     color: var(--gray);
 
     transition:
-        color .3s ease,
-        padding-left .3s ease;
+        color 0.3s ease,
+        padding-left 0.3s ease;
 }
+
 
 .footer-grid a:hover {
     color: var(--primary);
 
     padding-left: 4px;
 }
+
 
 .footer-grid i {
     width: 20px;
@@ -1371,15 +1496,16 @@ footer {
     color: var(--primary);
 }
 
+
 .footer-copy {
-    padding-top: 24px;
+    padding-top: 25px;
 
     border-top:
-        1px solid rgba(255,255,255,.07);
+        1px solid rgba(255, 255, 255, 0.07);
 
     color: var(--gray-dark);
 
-    font-size: 11px;
+    font-size: 12px;
 
     text-align: center;
 }
@@ -1397,8 +1523,8 @@ footer {
 
     z-index: 9998;
 
-    width: 62px;
-    height: 62px;
+    width: 64px;
+    height: 64px;
 
     display: flex;
 
@@ -1409,20 +1535,21 @@ footer {
 
     background: #25d366;
 
-    color: #fff;
+    color: #ffffff;
 
-    font-size: 29px;
+    font-size: 30px;
 
     box-shadow:
-        0 15px 40px rgba(0,0,0,.40);
+        0 15px 40px rgba(0, 0, 0, 0.40);
 
     transition:
-        transform .3s ease,
-        box-shadow .3s ease;
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 
     animation:
         whatsappPulse 2.5s infinite;
 }
+
 
 .whatsapp:hover {
     transform:
@@ -1430,30 +1557,38 @@ footer {
         scale(1.06);
 
     box-shadow:
-        0 20px 50px rgba(37,211,102,.30);
+        0 20px 50px rgba(37, 211, 102, 0.30);
 }
 
+
 @keyframes whatsappPulse {
+
     0% {
         box-shadow:
-            0 0 0 0 rgba(37,211,102,.45);
+            0 0 0 0 rgba(37, 211, 102, 0.45);
     }
 
     70% {
         box-shadow:
-            0 0 0 14px rgba(37,211,102,0);
+            0 0 0 14px rgba(37, 211, 102, 0);
     }
 
     100% {
         box-shadow:
-            0 0 0 0 rgba(37,211,102,0);
+            0 0 0 0 rgba(37, 211, 102, 0);
     }
+
 }
-
-
 /* ======================================================
    ANIMAÇÕES DE ENTRADA
    ====================================================== */
+
+/*
+   IMPORTANTE:
+   Os elementos .fade NÃO ficam invisíveis.
+   O JavaScript pode adicionar .visible depois,
+   mas a página continua funcionando mesmo sem JS.
+*/
 
 .fade {
     opacity: 1;
@@ -1461,9 +1596,10 @@ footer {
     transform: translateY(0);
 
     transition:
-        opacity .7s ease,
-        transform .7s ease;
+        opacity 0.7s ease,
+        transform 0.7s ease;
 }
+
 
 .fade.visible {
     opacity: 1;
@@ -1485,7 +1621,7 @@ a:focus-visible {
 
 
 /* ======================================================
-   OVERFLOW
+   PROTEÇÃO CONTRA OVERFLOW
    ====================================================== */
 
 .card,
@@ -1507,14 +1643,15 @@ a:focus-visible {
         scroll-behavior: auto !important;
 
         animation-duration:
-            .01ms !important;
+            0.01ms !important;
 
         animation-iteration-count:
             1 !important;
 
         transition-duration:
-            .01ms !important;
+            0.01ms !important;
     }
+
 }
 
 
@@ -1522,25 +1659,29 @@ a:focus-visible {
    TABLETS — ATÉ 1100px
    ====================================================== */
 
-@media (max-width:1100px) {
+@media (max-width: 1100px) {
 
     .nav {
         gap: 18px;
     }
 
+
     nav {
-        gap: 19px;
+        gap: 20px;
     }
 
+
     nav a {
+        font-size: 14px;
+    }
+
+
+    .btn-nav {
+        padding: 11px 18px;
+
         font-size: 13px;
     }
 
-    .btn-nav {
-        padding: 10px 17px;
-
-        font-size: 12px;
-    }
 
     .hero {
         padding:
@@ -1548,25 +1689,34 @@ a:focus-visible {
             90px;
     }
 
+
+    .hero-content {
+        max-width: 850px;
+    }
+
+
     .section {
         padding:
-            95px 6%;
+            100px 6%;
     }
+
 
     .numbers {
         padding:
             70px 6%;
 
         grid-template-columns:
-            repeat(2,1fr);
+            repeat(2, 1fr);
     }
+
 
     .footer-grid {
         grid-template-columns:
-            repeat(2,1fr);
+            repeat(2, 1fr);
 
-        gap: 38px;
+        gap: 40px;
     }
+
 }
 
 
@@ -1574,55 +1724,64 @@ a:focus-visible {
    TABLETS PEQUENOS — ATÉ 900px
    ====================================================== */
 
-@media (max-width:900px) {
+@media (max-width: 900px) {
 
     .nav {
-        min-height: 76px;
+        min-height: 78px;
     }
+
 
     .logo {
-        height: 50px;
+        height: 52px;
     }
+
 
     nav {
-        gap: 13px;
+        gap: 15px;
     }
 
+
     nav a {
+        font-size: 13px;
+    }
+
+
+    .btn-nav {
+        min-height: 44px;
+
+        padding:
+            10px 15px;
+
         font-size: 12px;
     }
 
-    .btn-nav {
-        min-height: 43px;
-
-        padding:
-            9px 14px;
-
-        font-size: 11px;
-    }
 
     .hero {
         min-height: 90vh;
     }
+
 
     .hero h1 {
         font-size:
             clamp(
                 38px,
                 6vw,
-                54px
+                56px
             );
     }
 
+
     .cards {
         grid-template-columns:
-            repeat(2,1fr);
+            repeat(2, 1fr);
     }
+
 
     .produtos {
         grid-template-columns:
-            repeat(2,1fr);
+            repeat(2, 1fr);
     }
+
 }
 
 
@@ -1630,15 +1789,16 @@ a:focus-visible {
    CELULAR — ATÉ 768px
    ====================================================== */
 
-@media (max-width:768px) {
+@media (max-width: 768px) {
 
     body {
         font-size: 14px;
     }
 
+
     header {
         background:
-            rgba(5,5,5,.94);
+            rgba(5, 5, 5, 0.92);
 
         backdrop-filter:
             blur(18px);
@@ -1647,36 +1807,47 @@ a:focus-visible {
             blur(18px);
     }
 
+
     .nav {
-        min-height: 70px;
+        min-height: 72px;
 
         width: 92%;
     }
 
+
     .logo {
-        height: 46px;
+        height: 48px;
     }
+
 
     nav {
         display: none;
     }
 
+
     .btn-nav {
-        min-height: 41px;
+        min-height: 42px;
 
         padding:
-            8px 13px;
+            9px 14px;
 
-        font-size: 11px;
+        font-size: 12px;
     }
+
+
+    .btn-nav i {
+        font-size: 14px;
+    }
+
 
     .hero {
         min-height: auto;
 
         padding:
-            135px 6%
-            85px;
+            145px 6%
+            90px;
     }
+
 
     .hero::before {
         width: 480px;
@@ -1686,6 +1857,7 @@ a:focus-visible {
         right: -220px;
     }
 
+
     .hero::after {
         width: 400px;
         height: 400px;
@@ -1694,289 +1866,331 @@ a:focus-visible {
         left: -230px;
     }
 
+
     .hero-content {
         max-width: 100%;
     }
 
+
     .hero-content > span {
-        margin-bottom: 15px;
+        margin-bottom: 16px;
 
-        font-size: 10px;
+        font-size: 11px;
 
-        letter-spacing: 1.4px;
+        letter-spacing: 1.5px;
 
         line-height: 1.6;
     }
 
+
     .hero h1 {
-        margin-bottom: 19px;
+        margin-bottom: 20px;
 
         font-size:
             clamp(
-                33px,
+                34px,
                 9vw,
-                47px
+                48px
             );
 
         line-height: 1.15;
 
-        letter-spacing: -.7px;
+        letter-spacing: -0.8px;
     }
 
-    .hero p {
-        margin-bottom: 30px;
 
-        font-size: 14px;
+    .hero p {
+        margin-bottom: 32px;
+
+        font-size: 15px;
 
         line-height: 1.75;
     }
+
 
     .buttons {
         width: 100%;
 
         flex-direction: column;
 
-        gap: 11px;
+        gap: 12px;
     }
+
 
     .btn-primary,
     .btn-secondary {
         width: 100%;
 
-        min-height: 51px;
+        min-height: 52px;
 
         padding:
-            12px 19px;
+            13px 20px;
 
-        font-size: 13px;
+        font-size: 14px;
     }
+
 
     section {
         padding:
-            78px 6%;
+            80px 6%;
     }
+
 
     .section {
         padding:
-            78px 6%;
+            80px 6%;
     }
 
+
     .section h2 {
-        margin-bottom: 17px;
+        margin-bottom: 18px;
 
         font-size:
             clamp(
-                27px,
+                28px,
                 8vw,
-                37px
+                38px
             );
+
+        line-height: 1.2;
     }
 
+
     .section h2::after {
-        width: 44px;
+        width: 45px;
 
         height: 3px;
 
-        margin-top: 14px;
+        margin-top: 15px;
     }
 
-    .subtitle {
-        margin-bottom: 36px;
 
-        font-size: 13px;
+    .subtitle {
+        margin-bottom: 38px;
+
+        font-size: 14px;
 
         line-height: 1.8;
     }
 
+
     .cards {
         grid-template-columns: 1fr;
 
-        gap: 17px;
+        gap: 18px;
     }
+
 
     .card {
         padding:
-            29px 23px;
+            30px 24px;
 
         border-radius:
             18px;
     }
 
-    .card i {
-        width: 63px;
-        height: 63px;
 
-        margin-bottom: 17px;
+    .card i {
+        width: 64px;
+        height: 64px;
+
+        margin-bottom: 18px;
 
         border-radius: 17px;
 
-        font-size: 26px;
+        font-size: 27px;
     }
+
 
     .card h3 {
-        font-size: 17px;
+        font-size: 18px;
     }
 
+
     .card p {
-        font-size: 12px;
+        font-size: 13px;
 
         line-height: 1.75;
     }
+
 
     .produtos {
         width: 100%;
 
         grid-template-columns: 1fr;
 
-        gap: 19px;
+        gap: 20px;
     }
 
+
     .produto {
-        padding: 15px;
+        padding: 16px;
 
         border-radius: 18px;
     }
 
-    .produto img {
-        height: 215px;
 
-        margin-bottom: 17px;
+    .produto img {
+        height: 220px;
+
+        margin-bottom: 18px;
     }
+
 
     .produto h3 {
-        font-size: 17px;
+        font-size: 18px;
     }
+
 
     .produto p {
         min-height: auto;
 
-        margin-bottom: 17px;
+        margin-bottom: 18px;
 
-        font-size: 12px;
+        font-size: 13px;
     }
+
 
     .produto-buttons {
-        gap: 9px;
+        gap: 10px;
     }
+
 
     .produto-buttons .btn-secondary,
     .produto-buttons .btn-produto {
-        min-height: 47px;
+        min-height: 48px;
 
-        font-size: 12px;
+        font-size: 13px;
     }
+
 
     .btn-container {
         width: 88%;
 
-        margin-top: 100px;
+        margin-top: 105px;
     }
+
 
     .btn {
-        min-height: 43px;
+        min-height: 44px;
 
         padding:
-            9px 16px;
+            10px 17px;
 
-        font-size: 12px;
+        font-size: 13px;
     }
+
 
     .numbers {
         padding:
-            62px 6%;
+            65px 6%;
 
         grid-template-columns:
             1fr 1fr;
 
         gap:
-            42px 18px;
+            45px 20px;
     }
+
 
     .number h2 {
         font-size:
             clamp(
-                33px,
+                34px,
                 10vw,
-                45px
+                46px
             );
     }
+
 
     .number span {
         display: block;
 
-        font-size: 11px;
+        font-size: 12px;
 
         line-height: 1.5;
     }
 
+
     .cta {
         padding:
-            82px 6%;
+            85px 6%;
     }
+
 
     .cta h2 {
         font-size:
             clamp(
-                27px,
+                28px,
                 8vw,
-                37px
+                38px
             );
     }
 
+
     .cta p {
-        font-size: 13px;
+        font-size: 14px;
 
         line-height: 1.75;
     }
 
+
     footer {
         padding:
-            58px 6% 24px;
+            60px 6% 25px;
     }
+
 
     .footer-grid {
         grid-template-columns: 1fr;
 
-        gap: 33px;
+        gap: 35px;
 
-        padding-bottom: 34px;
+        padding-bottom: 35px;
     }
+
 
     .footer-grid .logo {
-        height: 50px;
+        height: 52px;
     }
+
 
     .footer-grid h3 {
-        margin-bottom: 13px;
+        margin-bottom: 14px;
 
-        font-size: 14px;
+        font-size: 15px;
     }
+
 
     .footer-grid p {
-        font-size: 12px;
+        font-size: 13px;
     }
 
-    .footer-copy {
-        padding-top: 19px;
 
-        font-size: 10px;
+    .footer-copy {
+        padding-top: 20px;
+
+        font-size: 11px;
 
         line-height: 1.6;
     }
 
+
     .whatsapp {
-        right: 17px;
-        bottom: 17px;
+        right: 18px;
+        bottom: 18px;
 
-        width: 57px;
-        height: 57px;
+        width: 58px;
+        height: 58px;
 
-        font-size: 26px;
+        font-size: 27px;
     }
+
 
     .catalogos-section .card .btn-primary {
         max-width: 100%;
     }
+
 }
 
 
@@ -1984,125 +2198,146 @@ a:focus-visible {
    CELULARES PEQUENOS — ATÉ 480px
    ====================================================== */
 
-@media (max-width:480px) {
+@media (max-width: 480px) {
 
     .nav {
         width: 90%;
     }
 
+
     .logo {
-        height: 43px;
+        height: 44px;
     }
+
 
     .btn-nav {
         padding:
-            8px 11px;
+            8px 12px;
 
-        font-size: 10px;
+        font-size: 11px;
     }
+
 
     .hero {
         padding:
-            130px 5%
-            72px;
+            135px 5%
+            75px;
     }
+
 
     .hero-content > span {
-        font-size: 9px;
+        font-size: 10px;
 
         letter-spacing:
-            1.1px;
+            1.2px;
     }
+
 
     .hero h1 {
         font-size:
             clamp(
-                29px,
+                30px,
                 9.5vw,
-                39px
+                40px
             );
     }
 
+
     .hero p {
-        font-size: 13px;
+        font-size: 14px;
     }
+
 
     .section {
         padding:
-            68px 5%;
+            70px 5%;
     }
+
 
     .section h2 {
         font-size:
             clamp(
-                25px,
+                26px,
                 8.5vw,
-                33px
+                34px
             );
     }
 
+
     .subtitle {
-        font-size: 12px;
+        font-size: 13px;
     }
+
 
     .card {
         padding:
-            26px 19px;
+            27px 20px;
     }
+
 
     .produto {
-        padding: 13px;
+        padding: 14px;
     }
 
+
     .produto img {
-        height: 195px;
+        height: 200px;
     }
+
 
     .produto-buttons .btn-secondary,
     .produto-buttons .btn-produto {
-        min-height: 46px;
+        min-height: 47px;
     }
+
 
     .numbers {
         grid-template-columns: 1fr;
 
-        gap: 36px;
+        gap: 38px;
 
         padding:
-            58px 5%;
+            60px 5%;
     }
 
+
     .number h2 {
-        font-size: 39px;
+        font-size: 40px;
     }
+
 
     .cta {
         padding:
-            72px 5%;
+            75px 5%;
     }
+
 
     .cta h2 {
-        font-size: 28px;
+        font-size: 29px;
     }
 
+
     .cta p {
-        font-size: 12px;
+        font-size: 13px;
     }
+
 
     footer {
         padding:
-            48px 5% 20px;
+            50px 5% 20px;
     }
+
 
     .whatsapp {
-        right: 14px;
-        bottom: 14px;
+        right: 15px;
+        bottom: 15px;
 
-        width: 54px;
-        height: 54px;
+        width: 55px;
+        height: 55px;
 
-        font-size: 24px;
+        font-size: 25px;
     }
+
 }
 
 
@@ -2110,63 +2345,74 @@ a:focus-visible {
    CELULARES MUITO PEQUENOS — ATÉ 360px
    ====================================================== */
 
-@media (max-width:360px) {
+@media (max-width: 360px) {
 
     .logo {
-        height: 39px;
+        height: 40px;
     }
+
 
     .btn-nav {
         padding:
-            7px 9px;
+            8px 10px;
 
-        font-size: 9px;
+        font-size: 10px;
     }
+
 
     .hero {
         padding:
-            120px 5%
-            63px;
+            125px 5%
+            65px;
     }
+
 
     .hero h1 {
-        font-size: 28px;
+        font-size: 29px;
     }
 
+
     .hero p {
-        font-size: 12px;
+        font-size: 13px;
     }
+
 
     .btn-primary,
     .btn-secondary {
-        min-height: 48px;
+        min-height: 49px;
 
         padding:
-            11px 15px;
+            12px 16px;
 
-        font-size: 12px;
+        font-size: 13px;
     }
+
 
     .section h2 {
-        font-size: 24px;
+        font-size: 25px;
     }
+
 
     .card {
         padding:
-            23px 16px;
+            24px 17px;
     }
+
 
     .produto img {
-        height: 175px;
+        height: 180px;
     }
+
 
     .number h2 {
-        font-size: 35px;
+        font-size: 36px;
     }
 
+
     .number span {
-        font-size: 10px;
+        font-size: 11px;
     }
+
 }
 
 
@@ -2174,54 +2420,60 @@ a:focus-visible {
    TELAS GRANDES
    ====================================================== */
 
-@media (min-width:1600px) {
+@media (min-width: 1600px) {
 
     .hero-content {
         max-width: 1050px;
     }
+
 
     .section {
         padding-left: 10%;
         padding-right: 10%;
     }
 
+
     .numbers {
         padding-left: 10%;
         padding-right: 10%;
     }
 
+
     footer {
         padding-left: 10%;
         padding-right: 10%;
     }
+
 }
 
 
 /* ======================================================
-   HOVER SOMENTE COM MOUSE
+   HOVER SOMENTE EM DISPOSITIVOS COM MOUSE
    ====================================================== */
 
-@media (hover:none) {
+@media (hover: none) {
 
     .card:hover {
         transform: none;
 
         box-shadow:
-            0 15px 45px rgba(0,0,0,.20);
+            0 15px 45px rgba(0, 0, 0, 0.20);
 
         border-color:
             var(--border);
     }
+
 
     .produto:hover {
         transform: none;
 
         box-shadow:
-            0 15px 45px rgba(0,0,0,.20);
+            0 15px 45px rgba(0, 0, 0, 0.20);
 
         border-color:
             var(--border);
     }
+
 
     .btn-primary:hover,
     .btn-secondary:hover,
@@ -2229,9 +2481,11 @@ a:focus-visible {
         transform: none;
     }
 
+
     .produto:hover img {
         transform: none;
     }
+
 }
 
 
@@ -2248,16 +2502,19 @@ a:focus-visible {
         display: none !important;
     }
 
-    body {
-        background: #fff;
 
-        color: #000;
+    body {
+        background: #ffffff;
+
+        color: #000000;
     }
+
 
     section,
     footer {
-        background: #fff !important;
+        background: #ffffff !important;
 
-        color: #000;
+        color: #000000;
     }
+
 }
