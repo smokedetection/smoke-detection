@@ -1,6 +1,6 @@
 /* ======================================================
    SMOKE DETECTION
-   STYLE.CSS — V3.0
+   STYLE.CSS — V4.0
    ====================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
@@ -11,7 +11,6 @@
    ====================================================== */
 
 :root {
-
     --primary: #ff3131;
     --primary-light: #ff625a;
     --primary-dark: #a90000;
@@ -21,7 +20,7 @@
     --background-3: #141414;
 
     --card: rgba(255, 255, 255, 0.045);
-    --card-hover: rgba(255, 255, 255, 0.07);
+    --card-hover: rgba(255, 255, 255, 0.075);
 
     --text: #ffffff;
     --text-soft: #e8e8e8;
@@ -37,6 +36,8 @@
     --radius: 20px;
     --radius-small: 14px;
 
+    --header-height: 86px;
+
     --transition: 0.35s ease;
 }
 
@@ -50,27 +51,53 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
-    scroll-behavior: smooth;
 }
-
 
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
+    scroll-padding-top: 100px;
 }
-
 
 body {
     background: var(--background);
     color: var(--text);
     line-height: 1.7;
     overflow-x: hidden;
+    min-width: 320px;
 }
-
 
 ::selection {
     background: var(--primary);
     color: #ffffff;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button {
+    font-family: inherit;
+}
+
+section {
+    padding: 120px 8%;
+}
+
+.container {
+    width: min(1200px, 100%);
+    margin: 0 auto;
 }
 
 
@@ -82,11 +109,9 @@ body {
     width: 9px;
 }
 
-
 ::-webkit-scrollbar-track {
     background: #0b0b0b;
 }
-
 
 ::-webkit-scrollbar-thumb {
     background: linear-gradient(
@@ -97,42 +122,8 @@ body {
     border-radius: 20px;
 }
 
-
 ::-webkit-scrollbar-thumb:hover {
     background: var(--primary-light);
-}
-
-
-/* ======================================================
-   ELEMENTOS GERAIS
-   ====================================================== */
-
-img {
-    max-width: 100%;
-    display: block;
-}
-
-
-a {
-    color: #ffffff;
-    text-decoration: none;
-}
-
-
-button,
-a {
-    -webkit-tap-highlight-color: transparent;
-}
-
-
-section {
-    padding: 120px 8%;
-}
-
-
-.container {
-    width: min(1200px, 92%);
-    margin: 0 auto;
 }
 
 
@@ -145,9 +136,10 @@ header {
     top: 0;
     left: 0;
     width: 100%;
+    min-height: var(--header-height);
     z-index: 9999;
 
-    background: rgba(5, 5, 5, 0.68);
+    background: rgba(5, 5, 5, 0.72);
 
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
@@ -160,9 +152,16 @@ header {
         border-color 0.35s ease;
 }
 
+header.scrolled {
+    background: rgba(5, 5, 5, 0.94);
+    border-bottom-color: rgba(255, 49, 49, 0.12);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.30);
+}
 
 .nav {
-    min-height: 86px;
+    width: min(1200px, 92%);
+    min-height: var(--header-height);
+    margin: 0 auto;
 
     display: flex;
     align-items: center;
@@ -179,13 +178,13 @@ header {
 .logo {
     height: 58px;
     width: auto;
+    max-width: 210px;
     object-fit: contain;
 
     transition:
         transform 0.35s ease,
         filter 0.35s ease;
 }
-
 
 .logo:hover {
     transform: scale(1.05);
@@ -203,7 +202,6 @@ nav {
     gap: 32px;
 }
 
-
 nav a {
     position: relative;
 
@@ -218,7 +216,6 @@ nav a {
         color 0.3s ease,
         transform 0.3s ease;
 }
-
 
 nav a::after {
     content: "";
@@ -240,11 +237,9 @@ nav a::after {
     transition: width 0.3s ease;
 }
 
-
 nav a:hover {
     color: var(--primary-light);
 }
-
 
 nav a:hover::after {
     width: 100%;
@@ -257,24 +252,20 @@ nav a:hover::after {
 
 .btn-nav {
     display: inline-flex;
-
     align-items: center;
     justify-content: center;
-
     gap: 9px;
 
     min-height: 48px;
-
     padding: 12px 24px;
 
     border-radius: 50px;
 
-    background:
-        linear-gradient(
-            135deg,
-            var(--primary),
-            var(--primary-dark)
-        );
+    background: linear-gradient(
+        135deg,
+        var(--primary),
+        var(--primary-dark)
+    );
 
     color: #ffffff;
 
@@ -292,7 +283,6 @@ nav a:hover::after {
         filter 0.35s ease;
 }
 
-
 .btn-nav:hover {
     transform: translateY(-3px);
 
@@ -302,27 +292,23 @@ nav a:hover::after {
     filter: brightness(1.08);
 }
 
-
 .btn-nav:active {
     transform: scale(0.97);
 }
 
 
 /* ======================================================
-   BOTÕES
+   BOTÕES GERAIS
    ====================================================== */
 
 .btn-primary,
 .btn-secondary {
     display: inline-flex;
-
     align-items: center;
     justify-content: center;
-
     gap: 10px;
 
     min-height: 54px;
-
     padding: 14px 30px;
 
     border-radius: 50px;
@@ -331,6 +317,7 @@ nav a:hover::after {
     font-weight: 600;
 
     text-align: center;
+    cursor: pointer;
 
     transition:
         transform 0.35s ease,
@@ -340,21 +327,20 @@ nav a:hover::after {
         border-color 0.35s ease;
 }
 
-
 .btn-primary {
-    background:
-        linear-gradient(
-            135deg,
-            #ff3b30,
-            #c40000
-        );
+    background: linear-gradient(
+        135deg,
+        #ff3b30,
+        #c40000
+    );
 
     color: #ffffff;
+
+    border: 1px solid transparent;
 
     box-shadow:
         0 12px 30px rgba(255, 49, 49, 0.25);
 }
-
 
 .btn-primary:hover {
     transform: translateY(-4px);
@@ -362,7 +348,6 @@ nav a:hover::after {
     box-shadow:
         0 20px 45px rgba(255, 49, 49, 0.42);
 }
-
 
 .btn-secondary {
     border: 1px solid rgba(255, 255, 255, 0.28);
@@ -372,8 +357,8 @@ nav a:hover::after {
     color: #ffffff;
 
     backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }
-
 
 .btn-secondary:hover {
     background: #ffffff;
@@ -387,7 +372,6 @@ nav a:hover::after {
     box-shadow:
         0 15px 35px rgba(0, 0, 0, 0.3);
 }
-
 
 .btn-primary:active,
 .btn-secondary:active {
@@ -405,7 +389,6 @@ nav a:hover::after {
     min-height: 100vh;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
@@ -418,12 +401,11 @@ nav a:hover::after {
     background:
         linear-gradient(
             rgba(5, 5, 5, 0.76),
-            rgba(5, 5, 5, 0.86)
+            rgba(5, 5, 5, 0.88)
         ),
         url("fumaca.jpg")
         center center / cover no-repeat;
 }
-
 
 .hero::before {
     content: "";
@@ -451,7 +433,6 @@ nav a:hover::after {
         heroPulse 7s ease-in-out infinite;
 }
 
-
 .hero::after {
     content: "";
 
@@ -478,7 +459,6 @@ nav a:hover::after {
         heroPulseSecondary 9s ease-in-out infinite;
 }
 
-
 .hero-content {
     position: relative;
 
@@ -492,7 +472,6 @@ nav a:hover::after {
     animation:
         fadeUp 1s ease both;
 }
-
 
 .hero-content > span {
     display: inline-block;
@@ -509,7 +488,6 @@ nav a:hover::after {
     text-transform: uppercase;
 }
 
-
 .hero h1 {
     margin-bottom: 25px;
 
@@ -524,7 +502,6 @@ nav a:hover::after {
     letter-spacing: -1.5px;
 }
 
-
 .hero p {
     width: min(760px, 100%);
 
@@ -537,10 +514,8 @@ nav a:hover::after {
     line-height: 1.8;
 }
 
-
 .buttons {
     display: flex;
-
     align-items: center;
     justify-content: center;
 
@@ -555,7 +530,6 @@ nav a:hover::after {
    ====================================================== */
 
 @keyframes fadeUp {
-
     from {
         opacity: 0;
         transform: translateY(35px);
@@ -565,12 +539,9 @@ nav a:hover::after {
         opacity: 1;
         transform: translateY(0);
     }
-
 }
 
-
 @keyframes heroPulse {
-
     0%,
     100% {
         transform: scale(1);
@@ -581,12 +552,9 @@ nav a:hover::after {
         transform: scale(1.15);
         opacity: 1;
     }
-
 }
 
-
 @keyframes heroPulseSecondary {
-
     0%,
     100% {
         transform: scale(1);
@@ -595,7 +563,6 @@ nav a:hover::after {
     50% {
         transform: scale(0.88);
     }
-
 }
 
 
@@ -613,7 +580,6 @@ nav a:hover::after {
     overflow: hidden;
 }
 
-
 .section:nth-of-type(even) {
     background:
         linear-gradient(
@@ -622,7 +588,6 @@ nav a:hover::after {
             var(--background)
         );
 }
-
 
 .section h2 {
     position: relative;
@@ -641,7 +606,6 @@ nav a:hover::after {
 
     letter-spacing: -0.8px;
 }
-
 
 .section h2::after {
     content: "";
@@ -662,7 +626,6 @@ nav a:hover::after {
             var(--primary)
         );
 }
-
 
 .subtitle {
     width: min(760px, 100%);
@@ -699,7 +662,6 @@ nav a:hover::after {
     gap: 24px;
 }
 
-
 .card {
     position: relative;
 
@@ -730,7 +692,6 @@ nav a:hover::after {
         box-shadow 0.4s ease;
 }
 
-
 .card::before {
     content: "";
 
@@ -755,7 +716,6 @@ nav a:hover::after {
         transform 0.5s ease;
 }
 
-
 .card:hover {
     transform: translateY(-10px);
 
@@ -773,11 +733,9 @@ nav a:hover::after {
         var(--shadow-red);
 }
 
-
 .card:hover::before {
     transform: scale(1.8);
 }
-
 
 .card i {
     position: relative;
@@ -812,7 +770,6 @@ nav a:hover::after {
         color 0.4s ease;
 }
 
-
 .card:hover i {
     transform:
         scale(1.08)
@@ -822,7 +779,6 @@ nav a:hover::after {
 
     color: #ffffff;
 }
-
 
 .card h3 {
     position: relative;
@@ -838,7 +794,6 @@ nav a:hover::after {
     font-weight: 700;
 }
 
-
 .card p {
     position: relative;
 
@@ -850,12 +805,14 @@ nav a:hover::after {
 
     line-height: 1.8;
 }
+
+
 /* ======================================================
    PRODUTOS / SISTEMAS
    ====================================================== */
 
 .produtos {
-    width: min(1200px, 92%);
+    width: min(1200px, 100%);
 
     margin: 0 auto;
 
@@ -870,13 +827,14 @@ nav a:hover::after {
     gap: 28px;
 }
 
-
 .produto {
     position: relative;
 
     display: flex;
 
     flex-direction: column;
+
+    min-width: 0;
 
     background:
         linear-gradient(
@@ -904,7 +862,6 @@ nav a:hover::after {
         box-shadow 0.4s ease;
 }
 
-
 .produto:hover {
     transform: translateY(-9px);
 
@@ -915,7 +872,6 @@ nav a:hover::after {
         var(--shadow),
         var(--shadow-red);
 }
-
 
 .produto img {
     width: 100%;
@@ -933,11 +889,9 @@ nav a:hover::after {
         transform 0.5s ease;
 }
 
-
 .produto:hover img {
     transform: scale(1.04);
 }
-
 
 .produto h3 {
     margin-bottom: 10px;
@@ -948,7 +902,6 @@ nav a:hover::after {
 
     font-weight: 700;
 }
-
 
 .produto p {
     min-height: 75px;
@@ -979,8 +932,8 @@ nav a:hover::after {
     margin-top: auto;
 }
 
-
-.produto-buttons .btn-secondary {
+.produto-buttons .btn-secondary,
+.produto-buttons .btn-produto {
     width: 100%;
 
     min-height: 48px;
@@ -991,7 +944,6 @@ nav a:hover::after {
 
     font-size: 14px;
 }
-
 
 .produto-buttons .btn-secondary {
     display: inline-flex;
@@ -1012,7 +964,6 @@ nav a:hover::after {
     cursor: pointer;
 }
 
-
 .produto-buttons .btn-secondary:hover {
     background: #ffffff;
 
@@ -1022,7 +973,6 @@ nav a:hover::after {
 
     transform: translateY(-3px);
 }
-
 
 .btn-produto {
     display: flex;
@@ -1059,7 +1009,6 @@ nav a:hover::after {
         filter 0.3s ease;
 }
 
-
 .btn-produto:hover {
     transform: translateY(-3px);
 
@@ -1083,11 +1032,9 @@ nav a:hover::after {
         );
 }
 
-
 .catalogos-section .cards {
     align-items: stretch;
 }
-
 
 .catalogos-section .card {
     display: flex;
@@ -1099,11 +1046,9 @@ nav a:hover::after {
     justify-content: flex-start;
 }
 
-
 .catalogos-section .card p {
     margin-bottom: 28px;
 }
-
 
 .catalogos-section .card .btn-primary {
     width: 100%;
@@ -1112,7 +1057,6 @@ nav a:hover::after {
 
     margin-top: auto;
 }
-
 
 .catalogos-section .card br {
     display: none;
@@ -1128,7 +1072,6 @@ nav a:hover::after {
 
     margin: 125px auto 0;
 }
-
 
 .btn {
     display: inline-flex;
@@ -1157,13 +1100,13 @@ nav a:hover::after {
     font-weight: 500;
 
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 
     transition:
         background 0.3s ease,
         border-color 0.3s ease,
         transform 0.3s ease;
 }
-
 
 .btn:hover {
     background:
@@ -1210,7 +1153,6 @@ nav a:hover::after {
     overflow: hidden;
 }
 
-
 .numbers::before {
     content: "";
 
@@ -1237,7 +1179,6 @@ nav a:hover::after {
     pointer-events: none;
 }
 
-
 .number {
     position: relative;
 
@@ -1245,7 +1186,6 @@ nav a:hover::after {
 
     text-align: center;
 }
-
 
 .number h2 {
     margin-bottom: 8px;
@@ -1259,7 +1199,6 @@ nav a:hover::after {
 
     line-height: 1;
 }
-
 
 .number span {
     color: var(--gray);
@@ -1292,7 +1231,6 @@ nav a:hover::after {
     overflow: hidden;
 }
 
-
 .cta::before {
     content: "";
 
@@ -1309,7 +1247,6 @@ nav a:hover::after {
     background:
         rgba(255, 255, 255, 0.08);
 }
-
 
 .cta::after {
     content: "";
@@ -1328,13 +1265,11 @@ nav a:hover::after {
         rgba(0, 0, 0, 0.12);
 }
 
-
 .cta .container {
     position: relative;
 
     z-index: 2;
 }
-
 
 .cta h2 {
     margin-bottom: 18px;
@@ -1349,7 +1284,6 @@ nav a:hover::after {
     line-height: 1.2;
 }
 
-
 .cta p {
     width: min(700px, 100%);
 
@@ -1363,7 +1297,6 @@ nav a:hover::after {
     line-height: 1.8;
 }
 
-
 .cta .btn-primary {
     background: #ffffff;
 
@@ -1372,7 +1305,6 @@ nav a:hover::after {
     box-shadow:
         0 15px 35px rgba(0, 0, 0, 0.20);
 }
-
 
 .cta .btn-primary:hover {
     background: #ffffff;
@@ -1383,7 +1315,6 @@ nav a:hover::after {
         0 20px 45px rgba(0, 0, 0, 0.30);
 }
 
-
 .cta .btn-secondary {
     border-color:
         rgba(255, 255, 255, 0.55);
@@ -1391,7 +1322,6 @@ nav a:hover::after {
     background:
         rgba(0, 0, 0, 0.10);
 }
-
 
 .cta .btn-secondary:hover {
     border-color: #ffffff;
@@ -1419,7 +1349,6 @@ footer {
         1px solid rgba(255, 255, 255, 0.07);
 }
 
-
 .footer-grid {
     display: grid;
 
@@ -1434,16 +1363,13 @@ footer {
     padding-bottom: 50px;
 }
 
-
 .footer-grid > div {
     min-width: 0;
 }
 
-
 .footer-grid .logo {
     height: 58px;
 }
-
 
 .footer-grid h3 {
     margin-bottom: 20px;
@@ -1455,7 +1381,6 @@ footer {
     font-weight: 700;
 }
 
-
 .footer-grid p {
     margin-bottom: 9px;
 
@@ -1466,11 +1391,9 @@ footer {
     line-height: 1.7;
 }
 
-
 .footer-grid p:last-child {
     margin-bottom: 0;
 }
-
 
 .footer-grid a {
     color: var(--gray);
@@ -1480,13 +1403,11 @@ footer {
         padding-left 0.3s ease;
 }
 
-
 .footer-grid a:hover {
     color: var(--primary);
 
     padding-left: 4px;
 }
-
 
 .footer-grid i {
     width: 20px;
@@ -1495,7 +1416,6 @@ footer {
 
     color: var(--primary);
 }
-
 
 .footer-copy {
     padding-top: 25px;
@@ -1550,7 +1470,6 @@ footer {
         whatsappPulse 2.5s infinite;
 }
 
-
 .whatsapp:hover {
     transform:
         translateY(-5px)
@@ -1560,9 +1479,7 @@ footer {
         0 20px 50px rgba(37, 211, 102, 0.30);
 }
 
-
 @keyframes whatsappPulse {
-
     0% {
         box-shadow:
             0 0 0 0 rgba(37, 211, 102, 0.45);
@@ -1577,22 +1494,15 @@ footer {
         box-shadow:
             0 0 0 0 rgba(37, 211, 102, 0);
     }
-
 }
+
+
 /* ======================================================
    ANIMAÇÕES DE ENTRADA
    ====================================================== */
 
-/*
-   IMPORTANTE:
-   Os elementos .fade NÃO ficam invisíveis.
-   O JavaScript pode adicionar .visible depois,
-   mas a página continua funcionando mesmo sem JS.
-*/
-
 .fade {
     opacity: 1;
-
     transform: translateY(0);
 
     transition:
@@ -1600,19 +1510,18 @@ footer {
         transform 0.7s ease;
 }
 
-
 .fade.visible {
     opacity: 1;
-
     transform: translateY(0);
 }
 
 
 /* ======================================================
-   FOCO
+   FOCO / ACESSIBILIDADE
    ====================================================== */
 
-a:focus-visible {
+a:focus-visible,
+button:focus-visible {
     outline:
         2px solid var(--primary);
 
@@ -1632,11 +1541,10 @@ a:focus-visible {
 
 
 /* ======================================================
-   ACESSIBILIDADE
+   ACESSIBILIDADE — REDUÇÃO DE MOVIMENTO
    ====================================================== */
 
 @media (prefers-reduced-motion: reduce) {
-
     *,
     *::before,
     *::after {
@@ -1651,7 +1559,6 @@ a:focus-visible {
         transition-duration:
             0.01ms !important;
     }
-
 }
 
 
@@ -1665,23 +1572,18 @@ a:focus-visible {
         gap: 18px;
     }
 
-
     nav {
         gap: 20px;
     }
-
 
     nav a {
         font-size: 14px;
     }
 
-
     .btn-nav {
         padding: 11px 18px;
-
         font-size: 13px;
     }
-
 
     .hero {
         padding:
@@ -1689,17 +1591,14 @@ a:focus-visible {
             90px;
     }
 
-
     .hero-content {
         max-width: 850px;
     }
-
 
     .section {
         padding:
             100px 6%;
     }
-
 
     .numbers {
         padding:
@@ -1709,6 +1608,10 @@ a:focus-visible {
             repeat(2, 1fr);
     }
 
+    footer {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
 
     .footer-grid {
         grid-template-columns:
@@ -1716,7 +1619,6 @@ a:focus-visible {
 
         gap: 40px;
     }
-
 }
 
 
@@ -1726,25 +1628,25 @@ a:focus-visible {
 
 @media (max-width: 900px) {
 
+    :root {
+        --header-height: 78px;
+    }
+
     .nav {
         min-height: 78px;
     }
-
 
     .logo {
         height: 52px;
     }
 
-
     nav {
         gap: 15px;
     }
 
-
     nav a {
         font-size: 13px;
     }
-
 
     .btn-nav {
         min-height: 44px;
@@ -1755,11 +1657,9 @@ a:focus-visible {
         font-size: 12px;
     }
 
-
     .hero {
         min-height: 90vh;
     }
-
 
     .hero h1 {
         font-size:
@@ -1770,18 +1670,15 @@ a:focus-visible {
             );
     }
 
-
     .cards {
         grid-template-columns:
             repeat(2, 1fr);
     }
 
-
     .produtos {
         grid-template-columns:
             repeat(2, 1fr);
     }
-
 }
 
 
@@ -1791,14 +1688,17 @@ a:focus-visible {
 
 @media (max-width: 768px) {
 
+    :root {
+        --header-height: 72px;
+    }
+
     body {
         font-size: 14px;
     }
 
-
     header {
         background:
-            rgba(5, 5, 5, 0.92);
+            rgba(5, 5, 5, 0.94);
 
         backdrop-filter:
             blur(18px);
@@ -1807,23 +1707,20 @@ a:focus-visible {
             blur(18px);
     }
 
-
     .nav {
         min-height: 72px;
 
         width: 92%;
     }
 
-
     .logo {
         height: 48px;
+        max-width: 175px;
     }
-
 
     nav {
         display: none;
     }
-
 
     .btn-nav {
         min-height: 42px;
@@ -1834,11 +1731,9 @@ a:focus-visible {
         font-size: 12px;
     }
 
-
     .btn-nav i {
         font-size: 14px;
     }
-
 
     .hero {
         min-height: auto;
@@ -1848,7 +1743,6 @@ a:focus-visible {
             90px;
     }
 
-
     .hero::before {
         width: 480px;
         height: 480px;
@@ -1856,7 +1750,6 @@ a:focus-visible {
         top: -220px;
         right: -220px;
     }
-
 
     .hero::after {
         width: 400px;
@@ -1866,11 +1759,9 @@ a:focus-visible {
         left: -230px;
     }
 
-
     .hero-content {
         max-width: 100%;
     }
-
 
     .hero-content > span {
         margin-bottom: 16px;
@@ -1881,7 +1772,6 @@ a:focus-visible {
 
         line-height: 1.6;
     }
-
 
     .hero h1 {
         margin-bottom: 20px;
@@ -1898,7 +1788,6 @@ a:focus-visible {
         letter-spacing: -0.8px;
     }
 
-
     .hero p {
         margin-bottom: 32px;
 
@@ -1907,7 +1796,6 @@ a:focus-visible {
         line-height: 1.75;
     }
 
-
     .buttons {
         width: 100%;
 
@@ -1915,7 +1803,6 @@ a:focus-visible {
 
         gap: 12px;
     }
-
 
     .btn-primary,
     .btn-secondary {
@@ -1929,18 +1816,15 @@ a:focus-visible {
         font-size: 14px;
     }
 
-
     section {
         padding:
             80px 6%;
     }
 
-
     .section {
         padding:
             80px 6%;
     }
-
 
     .section h2 {
         margin-bottom: 18px;
@@ -1955,7 +1839,6 @@ a:focus-visible {
         line-height: 1.2;
     }
 
-
     .section h2::after {
         width: 45px;
 
@@ -1963,7 +1846,6 @@ a:focus-visible {
 
         margin-top: 15px;
     }
-
 
     .subtitle {
         margin-bottom: 38px;
@@ -1973,13 +1855,11 @@ a:focus-visible {
         line-height: 1.8;
     }
 
-
     .cards {
         grid-template-columns: 1fr;
 
         gap: 18px;
     }
-
 
     .card {
         padding:
@@ -1988,7 +1868,6 @@ a:focus-visible {
         border-radius:
             18px;
     }
-
 
     .card i {
         width: 64px;
@@ -2001,18 +1880,15 @@ a:focus-visible {
         font-size: 27px;
     }
 
-
     .card h3 {
         font-size: 18px;
     }
-
 
     .card p {
         font-size: 13px;
 
         line-height: 1.75;
     }
-
 
     .produtos {
         width: 100%;
@@ -2022,13 +1898,11 @@ a:focus-visible {
         gap: 20px;
     }
 
-
     .produto {
         padding: 16px;
 
         border-radius: 18px;
     }
-
 
     .produto img {
         height: 220px;
@@ -2036,11 +1910,9 @@ a:focus-visible {
         margin-bottom: 18px;
     }
 
-
     .produto h3 {
         font-size: 18px;
     }
-
 
     .produto p {
         min-height: auto;
@@ -2050,11 +1922,9 @@ a:focus-visible {
         font-size: 13px;
     }
 
-
     .produto-buttons {
         gap: 10px;
     }
-
 
     .produto-buttons .btn-secondary,
     .produto-buttons .btn-produto {
@@ -2063,13 +1933,11 @@ a:focus-visible {
         font-size: 13px;
     }
 
-
     .btn-container {
         width: 88%;
 
         margin-top: 105px;
     }
-
 
     .btn {
         min-height: 44px;
@@ -2079,7 +1947,6 @@ a:focus-visible {
 
         font-size: 13px;
     }
-
 
     .numbers {
         padding:
@@ -2092,7 +1959,6 @@ a:focus-visible {
             45px 20px;
     }
 
-
     .number h2 {
         font-size:
             clamp(
@@ -2102,7 +1968,6 @@ a:focus-visible {
             );
     }
 
-
     .number span {
         display: block;
 
@@ -2111,12 +1976,10 @@ a:focus-visible {
         line-height: 1.5;
     }
 
-
     .cta {
         padding:
             85px 6%;
     }
-
 
     .cta h2 {
         font-size:
@@ -2127,19 +1990,16 @@ a:focus-visible {
             );
     }
 
-
     .cta p {
         font-size: 14px;
 
         line-height: 1.75;
     }
 
-
     footer {
         padding:
             60px 6% 25px;
     }
-
 
     .footer-grid {
         grid-template-columns: 1fr;
@@ -2149,11 +2009,9 @@ a:focus-visible {
         padding-bottom: 35px;
     }
 
-
     .footer-grid .logo {
         height: 52px;
     }
-
 
     .footer-grid h3 {
         margin-bottom: 14px;
@@ -2161,11 +2019,9 @@ a:focus-visible {
         font-size: 15px;
     }
 
-
     .footer-grid p {
         font-size: 13px;
     }
-
 
     .footer-copy {
         padding-top: 20px;
@@ -2174,7 +2030,6 @@ a:focus-visible {
 
         line-height: 1.6;
     }
-
 
     .whatsapp {
         right: 18px;
@@ -2186,11 +2041,9 @@ a:focus-visible {
         font-size: 27px;
     }
 
-
     .catalogos-section .card .btn-primary {
         max-width: 100%;
     }
-
 }
 
 
@@ -2204,11 +2057,10 @@ a:focus-visible {
         width: 90%;
     }
 
-
     .logo {
         height: 44px;
+        max-width: 155px;
     }
-
 
     .btn-nav {
         padding:
@@ -2217,13 +2069,11 @@ a:focus-visible {
         font-size: 11px;
     }
 
-
     .hero {
         padding:
             135px 5%
             75px;
     }
-
 
     .hero-content > span {
         font-size: 10px;
@@ -2231,7 +2081,6 @@ a:focus-visible {
         letter-spacing:
             1.2px;
     }
-
 
     .hero h1 {
         font-size:
@@ -2242,17 +2091,14 @@ a:focus-visible {
             );
     }
 
-
     .hero p {
         font-size: 14px;
     }
-
 
     .section {
         padding:
             70px 5%;
     }
-
 
     .section h2 {
         font-size:
@@ -2263,33 +2109,27 @@ a:focus-visible {
             );
     }
 
-
     .subtitle {
         font-size: 13px;
     }
-
 
     .card {
         padding:
             27px 20px;
     }
 
-
     .produto {
         padding: 14px;
     }
-
 
     .produto img {
         height: 200px;
     }
 
-
     .produto-buttons .btn-secondary,
     .produto-buttons .btn-produto {
         min-height: 47px;
     }
-
 
     .numbers {
         grid-template-columns: 1fr;
@@ -2300,33 +2140,27 @@ a:focus-visible {
             60px 5%;
     }
 
-
     .number h2 {
         font-size: 40px;
     }
-
 
     .cta {
         padding:
             75px 5%;
     }
 
-
     .cta h2 {
         font-size: 29px;
     }
-
 
     .cta p {
         font-size: 13px;
     }
 
-
     footer {
         padding:
             50px 5% 20px;
     }
-
 
     .whatsapp {
         right: 15px;
@@ -2337,7 +2171,6 @@ a:focus-visible {
 
         font-size: 25px;
     }
-
 }
 
 
@@ -2349,8 +2182,8 @@ a:focus-visible {
 
     .logo {
         height: 40px;
+        max-width: 140px;
     }
-
 
     .btn-nav {
         padding:
@@ -2359,23 +2192,19 @@ a:focus-visible {
         font-size: 10px;
     }
 
-
     .hero {
         padding:
             125px 5%
             65px;
     }
 
-
     .hero h1 {
         font-size: 29px;
     }
 
-
     .hero p {
         font-size: 13px;
     }
-
 
     .btn-primary,
     .btn-secondary {
@@ -2387,32 +2216,26 @@ a:focus-visible {
         font-size: 13px;
     }
 
-
     .section h2 {
         font-size: 25px;
     }
-
 
     .card {
         padding:
             24px 17px;
     }
 
-
     .produto img {
         height: 180px;
     }
-
 
     .number h2 {
         font-size: 36px;
     }
 
-
     .number span {
         font-size: 11px;
     }
-
 }
 
 
@@ -2426,24 +2249,20 @@ a:focus-visible {
         max-width: 1050px;
     }
 
-
     .section {
         padding-left: 10%;
         padding-right: 10%;
     }
-
 
     .numbers {
         padding-left: 10%;
         padding-right: 10%;
     }
 
-
     footer {
         padding-left: 10%;
         padding-right: 10%;
     }
-
 }
 
 
@@ -2463,7 +2282,6 @@ a:focus-visible {
             var(--border);
     }
 
-
     .produto:hover {
         transform: none;
 
@@ -2474,18 +2292,15 @@ a:focus-visible {
             var(--border);
     }
 
-
     .btn-primary:hover,
     .btn-secondary:hover,
     .btn-nav:hover {
         transform: none;
     }
 
-
     .produto:hover img {
         transform: none;
     }
-
 }
 
 
@@ -2502,19 +2317,14 @@ a:focus-visible {
         display: none !important;
     }
 
-
     body {
         background: #ffffff;
-
         color: #000000;
     }
-
 
     section,
     footer {
         background: #ffffff !important;
-
         color: #000000;
     }
-
 }
