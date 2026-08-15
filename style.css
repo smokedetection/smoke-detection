@@ -1,6 +1,11 @@
 /* ======================================================
    SMOKE DETECTION
-   STYLE.CSS — V3.0
+   STYLE.CSS — V4.0
+   ====================================================== */
+
+
+/* ======================================================
+   FONTES
    ====================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
@@ -49,7 +54,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
     font-family: "Poppins", sans-serif;
+
     scroll-behavior: smooth;
 }
 
@@ -63,7 +70,9 @@ html {
 body {
     background: var(--background);
     color: var(--text);
+
     line-height: 1.7;
+
     overflow-x: hidden;
 }
 
@@ -89,11 +98,13 @@ body {
 
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(
-        180deg,
-        var(--primary),
-        var(--primary-dark)
-    );
+    background:
+        linear-gradient(
+            180deg,
+            var(--primary),
+            var(--primary-dark)
+        );
+
     border-radius: 20px;
 }
 
@@ -142,9 +153,12 @@ section {
 
 header {
     position: fixed;
+
     top: 0;
     left: 0;
+
     width: 100%;
+
     z-index: 9999;
 
     background: rgba(5, 5, 5, 0.68);
@@ -152,7 +166,8 @@ header {
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
 
-    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.07);
 
     transition:
         background 0.35s ease,
@@ -165,6 +180,7 @@ header {
     min-height: 86px;
 
     display: flex;
+
     align-items: center;
     justify-content: space-between;
 
@@ -179,6 +195,7 @@ header {
 .logo {
     height: 58px;
     width: auto;
+
     object-fit: contain;
 
     transition:
@@ -198,8 +215,10 @@ header {
 
 nav {
     display: flex;
+
     align-items: center;
     justify-content: center;
+
     gap: 32px;
 }
 
@@ -237,7 +256,8 @@ nav a::after {
 
     transform: translateX(-50%);
 
-    transition: width 0.3s ease;
+    transition:
+        width 0.3s ease;
 }
 
 
@@ -365,9 +385,11 @@ nav a:hover::after {
 
 
 .btn-secondary {
-    border: 1px solid rgba(255, 255, 255, 0.28);
+    border:
+        1px solid rgba(255, 255, 255, 0.28);
 
-    background: rgba(255, 255, 255, 0.025);
+    background:
+        rgba(255, 255, 255, 0.025);
 
     color: #ffffff;
 
@@ -515,7 +537,8 @@ nav a:hover::after {
 
     color: #ffffff;
 
-    font-size: clamp(42px, 5.3vw, 68px);
+    font-size:
+        clamp(42px, 5.3vw, 68px);
 
     font-weight: 800;
 
@@ -532,7 +555,8 @@ nav a:hover::after {
 
     color: #d5d5d5;
 
-    font-size: clamp(16px, 1.7vw, 21px);
+    font-size:
+        clamp(16px, 1.7vw, 21px);
 
     line-height: 1.8;
 }
@@ -631,7 +655,8 @@ nav a:hover::after {
 
     color: #ffffff;
 
-    font-size: clamp(30px, 4vw, 46px);
+    font-size:
+        clamp(30px, 4vw, 46px);
 
     font-weight: 800;
 
@@ -712,7 +737,8 @@ nav a:hover::after {
             rgba(255, 255, 255, 0.025)
         );
 
-    border: 1px solid var(--border);
+    border:
+        1px solid var(--border);
 
     border-radius: var(--radius);
 
@@ -850,6 +876,8 @@ nav a:hover::after {
 
     line-height: 1.8;
 }
+
+
 /* ======================================================
    PRODUTOS / SISTEMAS
    ====================================================== */
@@ -1579,21 +1607,26 @@ footer {
     }
 
 }
+
+
 /* ======================================================
    ANIMAÇÕES DE ENTRADA
    ====================================================== */
 
 /*
    IMPORTANTE:
-   Os elementos .fade NÃO ficam invisíveis.
-   O JavaScript pode adicionar .visible depois,
-   mas a página continua funcionando mesmo sem JS.
+   O JavaScript adiciona a classe .visible.
+   Os elementos começam invisíveis e entram
+   suavemente quando aparecem na tela.
 */
 
-.fade {
-    opacity: 1;
+.fade,
+.left,
+.right,
+.zoom {
+    opacity: 0;
 
-    transform: translateY(0);
+    transform: translateY(35px);
 
     transition:
         opacity 0.7s ease,
@@ -1601,10 +1634,28 @@ footer {
 }
 
 
-.fade.visible {
+.left {
+    transform: translateX(-45px);
+}
+
+
+.right {
+    transform: translateX(45px);
+}
+
+
+.zoom {
+    transform: scale(0.92);
+}
+
+
+.fade.visible,
+.left.visible,
+.right.visible,
+.zoom.visible {
     opacity: 1;
 
-    transform: translateY(0);
+    transform: translateY(0) translateX(0) scale(1);
 }
 
 
@@ -1640,6 +1691,7 @@ a:focus-visible {
     *,
     *::before,
     *::after {
+
         scroll-behavior: auto !important;
 
         animation-duration:
@@ -2064,6 +2116,13 @@ a:focus-visible {
     }
 
 
+    .btn-produto {
+        min-height: 48px;
+
+        font-size: 13px;
+    }
+
+
     .btn-container {
         width: 88%;
 
@@ -2189,6 +2248,42 @@ a:focus-visible {
 
     .catalogos-section .card .btn-primary {
         max-width: 100%;
+    }
+
+
+    /* ANIMAÇÕES NO CELULAR */
+
+    .fade,
+    .left,
+    .right,
+    .zoom {
+        transform: translateY(25px);
+    }
+
+
+    .left {
+        transform: translateX(-25px);
+    }
+
+
+    .right {
+        transform: translateX(25px);
+    }
+
+
+    .zoom {
+        transform: scale(0.96);
+    }
+
+
+    .fade.visible,
+    .left.visible,
+    .right.visible,
+    .zoom.visible {
+        transform:
+            translateY(0)
+            translateX(0)
+            scale(1);
     }
 
 }
@@ -2484,6 +2579,17 @@ a:focus-visible {
 
     .produto:hover img {
         transform: none;
+    }
+
+
+    .card:hover i {
+        transform: none;
+
+        background:
+            rgba(255, 49, 49, 0.10);
+
+        color:
+            var(--primary);
     }
 
 }
