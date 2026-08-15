@@ -1,11 +1,6 @@
 /* ======================================================
    SMOKE DETECTION
-   STYLE.CSS — V2.0
-   PARTE 1
-   ====================================================== */
-
-/* ======================================================
-   FONTES
+   STYLE.CSS — V3.0
    ====================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
@@ -43,7 +38,6 @@
     --radius-small: 14px;
 
     --transition: 0.35s ease;
-
 }
 
 
@@ -52,50 +46,31 @@
    ====================================================== */
 
 * {
-
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
     font-family: "Poppins", sans-serif;
-
     scroll-behavior: smooth;
-
 }
 
 
 html {
-
     scroll-behavior: smooth;
-
     overflow-x: hidden;
-
 }
 
 
 body {
-
     background: var(--background);
-
     color: var(--text);
-
     line-height: 1.7;
-
     overflow-x: hidden;
-
 }
 
 
-/* ======================================================
-   SELEÇÃO DE TEXTO
-   ====================================================== */
-
 ::selection {
-
     background: var(--primary);
-
     color: #ffffff;
-
 }
 
 
@@ -104,36 +79,27 @@ body {
    ====================================================== */
 
 ::-webkit-scrollbar {
-
     width: 9px;
-
 }
 
 
 ::-webkit-scrollbar-track {
-
     background: #0b0b0b;
-
 }
 
 
 ::-webkit-scrollbar-thumb {
-
     background: linear-gradient(
         180deg,
         var(--primary),
         var(--primary-dark)
     );
-
     border-radius: 20px;
-
 }
 
 
 ::-webkit-scrollbar-thumb:hover {
-
     background: var(--primary-light);
-
 }
 
 
@@ -142,66 +108,48 @@ body {
    ====================================================== */
 
 img {
-
     max-width: 100%;
-
     display: block;
-
 }
 
 
 a {
-
     color: #ffffff;
-
     text-decoration: none;
-
 }
 
 
 button,
 a {
-
     -webkit-tap-highlight-color: transparent;
-
 }
 
 
 section {
-
     padding: 120px 8%;
-
 }
 
 
 .container {
-
     width: min(1200px, 92%);
-
     margin: 0 auto;
-
 }
 
 
 /* ======================================================
-   HEADER / NAVBAR
+   HEADER
    ====================================================== */
 
 header {
-
     position: fixed;
-
     top: 0;
     left: 0;
-
     width: 100%;
-
     z-index: 9999;
 
     background: rgba(5, 5, 5, 0.68);
 
     backdrop-filter: blur(18px);
-
     -webkit-backdrop-filter: blur(18px);
 
     border-bottom: 1px solid rgba(255, 255, 255, 0.07);
@@ -210,26 +158,17 @@ header {
         background 0.35s ease,
         box-shadow 0.35s ease,
         border-color 0.35s ease;
-
 }
 
 
-/* ======================================================
-   NAV CONTAINER
-   ====================================================== */
-
 .nav {
-
     min-height: 86px;
 
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
 
     gap: 30px;
-
 }
 
 
@@ -238,24 +177,18 @@ header {
    ====================================================== */
 
 .logo {
-
     height: 58px;
-
     width: auto;
-
     object-fit: contain;
 
     transition:
         transform 0.35s ease,
         filter 0.35s ease;
-
 }
 
 
 .logo:hover {
-
     transform: scale(1.05);
-
 }
 
 
@@ -264,26 +197,19 @@ header {
    ====================================================== */
 
 nav {
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     gap: 32px;
-
 }
 
 
 nav a {
-
     position: relative;
 
     color: #ffffff;
 
     font-size: 15px;
-
     font-weight: 500;
 
     white-space: nowrap;
@@ -291,22 +217,18 @@ nav a {
     transition:
         color 0.3s ease,
         transform 0.3s ease;
-
 }
 
 
 nav a::after {
-
     content: "";
 
     position: absolute;
 
     left: 50%;
-
     bottom: -9px;
 
     width: 0;
-
     height: 2px;
 
     border-radius: 10px;
@@ -316,34 +238,27 @@ nav a::after {
     transform: translateX(-50%);
 
     transition: width 0.3s ease;
-
 }
 
 
 nav a:hover {
-
     color: var(--primary-light);
-
 }
 
 
 nav a:hover::after {
-
     width: 100%;
-
 }
 
 
 /* ======================================================
-   BOTÃO DA NAVBAR
+   BOTÃO NAVBAR
    ====================================================== */
 
 .btn-nav {
-
     display: inline-flex;
 
     align-items: center;
-
     justify-content: center;
 
     gap: 9px;
@@ -364,7 +279,6 @@ nav a:hover::after {
     color: #ffffff;
 
     font-size: 14px;
-
     font-weight: 600;
 
     white-space: nowrap;
@@ -376,40 +290,33 @@ nav a:hover::after {
         transform 0.35s ease,
         box-shadow 0.35s ease,
         filter 0.35s ease;
-
 }
 
 
 .btn-nav:hover {
-
     transform: translateY(-3px);
 
     box-shadow:
         0 16px 40px rgba(255, 49, 49, 0.38);
 
     filter: brightness(1.08);
-
 }
 
 
 .btn-nav:active {
-
     transform: scale(0.97);
-
 }
 
 
 /* ======================================================
-   BOTÕES PRINCIPAIS
+   BOTÕES
    ====================================================== */
 
 .btn-primary,
 .btn-secondary {
-
     display: inline-flex;
 
     align-items: center;
-
     justify-content: center;
 
     gap: 10px;
@@ -421,7 +328,6 @@ nav a:hover::after {
     border-radius: 50px;
 
     font-size: 15px;
-
     font-weight: 600;
 
     text-align: center;
@@ -432,12 +338,10 @@ nav a:hover::after {
         background 0.35s ease,
         color 0.35s ease,
         border-color 0.35s ease;
-
 }
 
 
 .btn-primary {
-
     background:
         linear-gradient(
             135deg,
@@ -449,30 +353,18 @@ nav a:hover::after {
 
     box-shadow:
         0 12px 30px rgba(255, 49, 49, 0.25);
-
 }
 
 
 .btn-primary:hover {
-
     transform: translateY(-4px);
 
     box-shadow:
         0 20px 45px rgba(255, 49, 49, 0.42);
-
-}
-
-
-.btn-primary:active,
-.btn-secondary:active {
-
-    transform: scale(0.97);
-
 }
 
 
 .btn-secondary {
-
     border: 1px solid rgba(255, 255, 255, 0.28);
 
     background: rgba(255, 255, 255, 0.025);
@@ -480,12 +372,10 @@ nav a:hover::after {
     color: #ffffff;
 
     backdrop-filter: blur(8px);
-
 }
 
 
 .btn-secondary:hover {
-
     background: #ffffff;
 
     border-color: #ffffff;
@@ -496,7 +386,12 @@ nav a:hover::after {
 
     box-shadow:
         0 15px 35px rgba(0, 0, 0, 0.3);
+}
 
+
+.btn-primary:active,
+.btn-secondary:active {
+    transform: scale(0.97);
 }
 
 
@@ -505,7 +400,6 @@ nav a:hover::after {
    ====================================================== */
 
 .hero {
-
     position: relative;
 
     min-height: 100vh;
@@ -513,12 +407,9 @@ nav a:hover::after {
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
-    padding:
-        150px 8%
-        100px;
+    padding: 150px 8% 100px;
 
     text-align: center;
 
@@ -530,29 +421,19 @@ nav a:hover::after {
             rgba(5, 5, 5, 0.86)
         ),
         url("fumaca.jpg")
-        center center /
-        cover
-        no-repeat;
-
+        center center / cover no-repeat;
 }
 
 
-/* ======================================================
-   HERO — BRILHO VERMELHO
-   ====================================================== */
-
 .hero::before {
-
     content: "";
 
     position: absolute;
 
     width: 720px;
-
     height: 720px;
 
     top: -300px;
-
     right: -250px;
 
     border-radius: 50%;
@@ -568,26 +449,18 @@ nav a:hover::after {
 
     animation:
         heroPulse 7s ease-in-out infinite;
-
 }
 
 
-/* ======================================================
-   HERO — BRILHO SECUNDÁRIO
-   ====================================================== */
-
 .hero::after {
-
     content: "";
 
     position: absolute;
 
     width: 600px;
-
     height: 600px;
 
     left: -300px;
-
     bottom: -300px;
 
     border-radius: 50%;
@@ -603,34 +476,25 @@ nav a:hover::after {
 
     animation:
         heroPulseSecondary 9s ease-in-out infinite;
-
 }
 
 
-/* ======================================================
-   CONTEÚDO DO HERO
-   ====================================================== */
-
 .hero-content {
-
     position: relative;
 
     z-index: 5;
 
     width: 100%;
-
     max-width: 950px;
 
     margin: 0 auto;
 
     animation:
         fadeUp 1s ease both;
-
 }
 
 
 .hero-content > span {
-
     display: inline-block;
 
     margin-bottom: 20px;
@@ -638,106 +502,68 @@ nav a:hover::after {
     color: var(--primary-light);
 
     font-size: 13px;
-
     font-weight: 700;
 
     letter-spacing: 2px;
 
     text-transform: uppercase;
-
 }
 
 
-/* ======================================================
-   TÍTULO HERO
-   ====================================================== */
-
 .hero h1 {
-
     margin-bottom: 25px;
 
     color: #ffffff;
 
-    font-size: clamp(
-        42px,
-        5.3vw,
-        68px
-    );
+    font-size: clamp(42px, 5.3vw, 68px);
 
     font-weight: 800;
 
     line-height: 1.12;
 
     letter-spacing: -1.5px;
-
 }
 
 
-/* ======================================================
-   TEXTO HERO
-   ====================================================== */
-
 .hero p {
-
     width: min(760px, 100%);
 
-    margin:
-        0 auto 42px;
+    margin: 0 auto 42px;
 
     color: #d5d5d5;
 
-    font-size: clamp(
-        16px,
-        1.7vw,
-        21px
-    );
+    font-size: clamp(16px, 1.7vw, 21px);
 
     line-height: 1.8;
-
 }
 
 
-/* ======================================================
-   BOTÕES DO HERO
-   ====================================================== */
-
 .buttons {
-
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     gap: 16px;
 
     flex-wrap: wrap;
-
 }
 
 
 /* ======================================================
-   ANIMAÇÕES DO HERO
+   ANIMAÇÕES
    ====================================================== */
 
 @keyframes fadeUp {
 
     from {
-
         opacity: 0;
-
-        transform:
-            translateY(35px);
-
+        transform: translateY(35px);
     }
 
     to {
-
         opacity: 1;
-
-        transform:
-            translateY(0);
-
+        transform: translateY(0);
     }
 
 }
@@ -747,21 +573,13 @@ nav a:hover::after {
 
     0%,
     100% {
-
-        transform:
-            scale(1);
-
+        transform: scale(1);
         opacity: 0.8;
-
     }
 
     50% {
-
-        transform:
-            scale(1.15);
-
+        transform: scale(1.15);
         opacity: 1;
-
     }
 
 }
@@ -771,86 +589,49 @@ nav a:hover::after {
 
     0%,
     100% {
-
-        transform:
-            scale(1);
-
+        transform: scale(1);
     }
 
     50% {
-
-        transform:
-            scale(0.88);
-
+        transform: scale(0.88);
     }
 
 }
 
 
 /* ======================================================
-   ACESSIBILIDADE
-   ====================================================== */
-
-@media (prefers-reduced-motion: reduce) {
-
-    *,
-    *::before,
-    *::after {
-
-        scroll-behavior: auto !important;
-
-        animation-duration: 0.01ms !important;
-
-        animation-iteration-count: 1 !important;
-
-        transition-duration: 0.01ms !important;
-
-    }
-
-}
-/* ======================================================
-   SEÇÕES GERAIS
+   SEÇÕES
    ====================================================== */
 
 .section {
-
     position: relative;
 
-    padding:
-        120px 8%;
+    padding: 120px 8%;
 
     background: var(--background);
 
     overflow: hidden;
-
 }
 
 
 .section:nth-of-type(even) {
-
     background:
         linear-gradient(
             180deg,
             var(--background-2),
             var(--background)
         );
-
 }
 
 
 .section h2 {
-
     position: relative;
 
     margin-bottom: 20px;
 
     color: #ffffff;
 
-    font-size: clamp(
-        30px,
-        4vw,
-        46px
-    );
+    font-size: clamp(30px, 4vw, 46px);
 
     font-weight: 800;
 
@@ -859,18 +640,15 @@ nav a:hover::after {
     text-align: center;
 
     letter-spacing: -0.8px;
-
 }
 
 
 .section h2::after {
-
     content: "";
 
     display: block;
 
     width: 55px;
-
     height: 3px;
 
     margin: 18px auto 0;
@@ -883,16 +661,13 @@ nav a:hover::after {
             var(--primary-dark),
             var(--primary)
         );
-
 }
 
 
 .subtitle {
-
     width: min(760px, 100%);
 
-    margin:
-        0 auto 55px;
+    margin: 0 auto 55px;
 
     color: var(--gray);
 
@@ -901,7 +676,6 @@ nav a:hover::after {
     line-height: 1.8;
 
     text-align: center;
-
 }
 
 
@@ -910,7 +684,6 @@ nav a:hover::after {
    ====================================================== */
 
 .cards {
-
     width: min(1200px, 100%);
 
     margin: 0 auto;
@@ -924,12 +697,10 @@ nav a:hover::after {
         );
 
     gap: 24px;
-
 }
 
 
 .card {
-
     position: relative;
 
     padding: 38px 30px;
@@ -957,22 +728,18 @@ nav a:hover::after {
         border-color 0.4s ease,
         background 0.4s ease,
         box-shadow 0.4s ease;
-
 }
 
 
 .card::before {
-
     content: "";
 
     position: absolute;
 
     width: 150px;
-
     height: 150px;
 
     top: -90px;
-
     right: -90px;
 
     border-radius: 50%;
@@ -986,14 +753,11 @@ nav a:hover::after {
 
     transition:
         transform 0.5s ease;
-
 }
 
 
 .card:hover {
-
-    transform:
-        translateY(-10px);
+    transform: translateY(-10px);
 
     background:
         linear-gradient(
@@ -1002,26 +766,20 @@ nav a:hover::after {
             rgba(255, 255, 255, 0.035)
         );
 
-    border-color:
-        var(--border-hover);
+    border-color: var(--border-hover);
 
     box-shadow:
         var(--shadow),
         var(--shadow-red);
-
 }
 
 
 .card:hover::before {
-
-    transform:
-        scale(1.8);
-
+    transform: scale(1.8);
 }
 
 
 .card i {
-
     position: relative;
 
     z-index: 2;
@@ -1029,11 +787,9 @@ nav a:hover::after {
     display: inline-flex;
 
     align-items: center;
-
     justify-content: center;
 
     width: 72px;
-
     height: 72px;
 
     margin-bottom: 22px;
@@ -1046,8 +802,7 @@ nav a:hover::after {
     border:
         1px solid rgba(255, 49, 49, 0.18);
 
-    color:
-        var(--primary);
+    color: var(--primary);
 
     font-size: 30px;
 
@@ -1055,26 +810,21 @@ nav a:hover::after {
         transform 0.4s ease,
         background 0.4s ease,
         color 0.4s ease;
-
 }
 
 
 .card:hover i {
-
     transform:
         scale(1.08)
         rotate(-3deg);
 
-    background:
-        var(--primary);
+    background: var(--primary);
 
     color: #ffffff;
-
 }
 
 
 .card h3 {
-
     position: relative;
 
     z-index: 2;
@@ -1086,12 +836,10 @@ nav a:hover::after {
     font-size: 20px;
 
     font-weight: 700;
-
 }
 
 
 .card p {
-
     position: relative;
 
     z-index: 2;
@@ -1101,16 +849,12 @@ nav a:hover::after {
     font-size: 14px;
 
     line-height: 1.8;
-
 }
-
-
 /* ======================================================
-   CARDS DE PRODUTOS
+   PRODUTOS / SISTEMAS
    ====================================================== */
 
 .produtos {
-
     width: min(1200px, 92%);
 
     margin: 0 auto;
@@ -1124,13 +868,15 @@ nav a:hover::after {
         );
 
     gap: 28px;
-
 }
 
 
 .produto {
-
     position: relative;
+
+    display: flex;
+
+    flex-direction: column;
 
     background:
         linear-gradient(
@@ -1156,14 +902,11 @@ nav a:hover::after {
         transform 0.4s ease,
         border-color 0.4s ease,
         box-shadow 0.4s ease;
-
 }
 
 
 .produto:hover {
-
-    transform:
-        translateY(-9px);
+    transform: translateY(-9px);
 
     border-color:
         var(--border-hover);
@@ -1171,12 +914,10 @@ nav a:hover::after {
     box-shadow:
         var(--shadow),
         var(--shadow-red);
-
 }
 
 
 .produto img {
-
     width: 100%;
 
     height: 230px;
@@ -1190,20 +931,15 @@ nav a:hover::after {
 
     transition:
         transform 0.5s ease;
-
 }
 
 
 .produto:hover img {
-
-    transform:
-        scale(1.04);
-
+    transform: scale(1.04);
 }
 
 
 .produto h3 {
-
     margin-bottom: 10px;
 
     color: #ffffff;
@@ -1211,12 +947,10 @@ nav a:hover::after {
     font-size: 20px;
 
     font-weight: 700;
-
 }
 
 
 .produto p {
-
     min-height: 75px;
 
     margin-bottom: 20px;
@@ -1226,16 +960,74 @@ nav a:hover::after {
     font-size: 14px;
 
     line-height: 1.7;
+}
 
+
+/* ======================================================
+   BOTÕES DOS PRODUTOS
+   ====================================================== */
+
+.produto-buttons {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+    width: 100%;
+
+    margin-top: auto;
+}
+
+
+.produto-buttons .btn-secondary {
+    width: 100%;
+
+    min-height: 48px;
+
+    padding: 12px 18px;
+
+    border-radius: 12px;
+
+    font-size: 14px;
+}
+
+
+.produto-buttons .btn-secondary {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    background:
+        rgba(255, 255, 255, 0.05);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.25);
+
+    color: #ffffff;
+
+    cursor: pointer;
+}
+
+
+.produto-buttons .btn-secondary:hover {
+    background: #ffffff;
+
+    color: #111111;
+
+    border-color: #ffffff;
+
+    transform: translateY(-3px);
 }
 
 
 .btn-produto {
-
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     gap: 8px;
@@ -1265,21 +1057,65 @@ nav a:hover::after {
         transform 0.3s ease,
         box-shadow 0.3s ease,
         filter 0.3s ease;
-
 }
 
 
 .btn-produto:hover {
-
-    transform:
-        translateY(-3px);
+    transform: translateY(-3px);
 
     box-shadow:
         0 12px 30px rgba(255, 49, 49, 0.30);
 
-    filter:
-        brightness(1.08);
+    filter: brightness(1.08);
+}
 
+
+/* ======================================================
+   CATÁLOGOS
+   ====================================================== */
+
+.catalogos-section {
+    background:
+        linear-gradient(
+            180deg,
+            var(--background-2),
+            var(--background)
+        );
+}
+
+
+.catalogos-section .cards {
+    align-items: stretch;
+}
+
+
+.catalogos-section .card {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: flex-start;
+}
+
+
+.catalogos-section .card p {
+    margin-bottom: 28px;
+}
+
+
+.catalogos-section .card .btn-primary {
+    width: 100%;
+
+    max-width: 260px;
+
+    margin-top: auto;
+}
+
+
+.catalogos-section .card br {
+    display: none;
 }
 
 
@@ -1288,20 +1124,16 @@ nav a:hover::after {
    ====================================================== */
 
 .btn-container {
-
     width: min(1200px, 92%);
 
     margin: 125px auto 0;
-
 }
 
 
 .btn {
-
     display: inline-flex;
 
     align-items: center;
-
     justify-content: center;
 
     gap: 8px;
@@ -1324,28 +1156,23 @@ nav a:hover::after {
 
     font-weight: 500;
 
-    backdrop-filter:
-        blur(10px);
+    backdrop-filter: blur(10px);
 
     transition:
         background 0.3s ease,
         border-color 0.3s ease,
         transform 0.3s ease;
-
 }
 
 
 .btn:hover {
-
     background:
         rgba(255, 49, 49, 0.12);
 
     border-color:
         rgba(255, 49, 49, 0.35);
 
-    transform:
-        translateX(-4px);
-
+    transform: translateX(-4px);
 }
 
 
@@ -1354,13 +1181,11 @@ nav a:hover::after {
    ====================================================== */
 
 .numbers {
-
     position: relative;
 
     width: 100%;
 
-    padding:
-        85px 8%;
+    padding: 85px 8%;
 
     display: grid;
 
@@ -1383,22 +1208,18 @@ nav a:hover::after {
         1px solid rgba(255, 255, 255, 0.06);
 
     overflow: hidden;
-
 }
 
 
 .numbers::before {
-
     content: "";
 
     position: absolute;
 
     width: 500px;
-
     height: 500px;
 
     left: 50%;
-
     top: 50%;
 
     transform:
@@ -1414,27 +1235,22 @@ nav a:hover::after {
         );
 
     pointer-events: none;
-
 }
 
 
 .number {
-
     position: relative;
 
     z-index: 2;
 
     text-align: center;
-
 }
 
 
 .number h2 {
-
     margin-bottom: 8px;
 
-    color:
-        var(--primary);
+    color: var(--primary);
 
     font-size:
         clamp(38px, 5vw, 56px);
@@ -1442,19 +1258,15 @@ nav a:hover::after {
     font-weight: 800;
 
     line-height: 1;
-
 }
 
 
 .number span {
-
-    color:
-        var(--gray);
+    color: var(--gray);
 
     font-size: 14px;
 
     font-weight: 500;
-
 }
 
 
@@ -1463,11 +1275,9 @@ nav a:hover::after {
    ====================================================== */
 
 .cta {
-
     position: relative;
 
-    padding:
-        120px 8%;
+    padding: 120px 8%;
 
     text-align: center;
 
@@ -1480,65 +1290,53 @@ nav a:hover::after {
         );
 
     overflow: hidden;
-
 }
 
 
 .cta::before {
-
     content: "";
 
     position: absolute;
 
     width: 500px;
-
     height: 500px;
 
     top: -280px;
-
     right: -180px;
 
     border-radius: 50%;
 
     background:
         rgba(255, 255, 255, 0.08);
-
 }
 
 
 .cta::after {
-
     content: "";
 
     position: absolute;
 
     width: 400px;
-
     height: 400px;
 
     bottom: -250px;
-
     left: -180px;
 
     border-radius: 50%;
 
     background:
         rgba(0, 0, 0, 0.12);
-
 }
 
 
 .cta .container {
-
     position: relative;
 
     z-index: 2;
-
 }
 
 
 .cta h2 {
-
     margin-bottom: 18px;
 
     color: #ffffff;
@@ -1549,16 +1347,13 @@ nav a:hover::after {
     font-weight: 800;
 
     line-height: 1.2;
-
 }
 
 
 .cta p {
-
     width: min(700px, 100%);
 
-    margin:
-        0 auto 35px;
+    margin: 0 auto 35px;
 
     color:
         rgba(255, 255, 255, 0.88);
@@ -1566,53 +1361,44 @@ nav a:hover::after {
     font-size: 16px;
 
     line-height: 1.8;
-
 }
 
 
 .cta .btn-primary {
-
     background: #ffffff;
 
     color: #a50000;
 
     box-shadow:
         0 15px 35px rgba(0, 0, 0, 0.20);
-
 }
 
 
 .cta .btn-primary:hover {
-
     background: #ffffff;
 
     color: #750000;
 
     box-shadow:
         0 20px 45px rgba(0, 0, 0, 0.30);
-
 }
 
 
 .cta .btn-secondary {
-
     border-color:
         rgba(255, 255, 255, 0.55);
 
     background:
         rgba(0, 0, 0, 0.10);
-
 }
 
 
 .cta .btn-secondary:hover {
-
     border-color: #ffffff;
 
     background: #ffffff;
 
     color: #8b0000;
-
 }
 
 
@@ -1621,7 +1407,6 @@ nav a:hover::after {
    ====================================================== */
 
 footer {
-
     position: relative;
 
     padding:
@@ -1632,12 +1417,10 @@ footer {
 
     border-top:
         1px solid rgba(255, 255, 255, 0.07);
-
 }
 
 
 .footer-grid {
-
     display: grid;
 
     grid-template-columns:
@@ -1649,26 +1432,20 @@ footer {
     gap: 45px;
 
     padding-bottom: 50px;
-
 }
 
 
 .footer-grid > div {
-
     min-width: 0;
-
 }
 
 
 .footer-grid .logo {
-
     height: 58px;
-
 }
 
 
 .footer-grid h3 {
-
     margin-bottom: 20px;
 
     color: #ffffff;
@@ -1676,12 +1453,10 @@ footer {
     font-size: 16px;
 
     font-weight: 700;
-
 }
 
 
 .footer-grid p {
-
     margin-bottom: 9px;
 
     color: var(--gray);
@@ -1689,95 +1464,76 @@ footer {
     font-size: 13px;
 
     line-height: 1.7;
-
 }
 
 
 .footer-grid p:last-child {
-
     margin-bottom: 0;
-
 }
 
 
 .footer-grid a {
-
     color: var(--gray);
 
     transition:
         color 0.3s ease,
         padding-left 0.3s ease;
-
 }
 
 
 .footer-grid a:hover {
-
-    color:
-        var(--primary);
+    color: var(--primary);
 
     padding-left: 4px;
-
 }
 
 
 .footer-grid i {
-
     width: 20px;
 
     margin-right: 4px;
 
-    color:
-        var(--primary);
-
+    color: var(--primary);
 }
 
 
 .footer-copy {
-
     padding-top: 25px;
 
     border-top:
         1px solid rgba(255, 255, 255, 0.07);
 
-    color:
-        var(--gray-dark);
+    color: var(--gray-dark);
 
     font-size: 12px;
 
     text-align: center;
-
 }
 
 
 /* ======================================================
-   WHATSAPP FLUTUANTE
+   WHATSAPP
    ====================================================== */
 
 .whatsapp {
-
     position: fixed;
 
     right: 25px;
-
     bottom: 25px;
 
     z-index: 9998;
 
     width: 64px;
-
     height: 64px;
 
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     border-radius: 50%;
 
-    background:
-        #25d366;
+    background: #25d366;
 
     color: #ffffff;
 
@@ -1792,87 +1548,75 @@ footer {
 
     animation:
         whatsappPulse 2.5s infinite;
-
 }
 
 
 .whatsapp:hover {
-
     transform:
         translateY(-5px)
         scale(1.06);
 
     box-shadow:
         0 20px 50px rgba(37, 211, 102, 0.30);
-
 }
 
 
 @keyframes whatsappPulse {
 
     0% {
-
         box-shadow:
             0 0 0 0 rgba(37, 211, 102, 0.45);
-
     }
 
     70% {
-
         box-shadow:
             0 0 0 14px rgba(37, 211, 102, 0);
-
     }
 
     100% {
-
         box-shadow:
             0 0 0 0 rgba(37, 211, 102, 0);
-
     }
 
 }
-
-
 /* ======================================================
    ANIMAÇÕES DE ENTRADA
    ====================================================== */
 
+/*
+   IMPORTANTE:
+   Os elementos .fade NÃO ficam invisíveis.
+   O JavaScript pode adicionar .visible depois,
+   mas a página continua funcionando mesmo sem JS.
+*/
+
 .fade {
+    opacity: 1;
 
-    opacity: 0;
-
-    transform:
-        translateY(25px);
+    transform: translateY(0);
 
     transition:
         opacity 0.7s ease,
         transform 0.7s ease;
-
 }
 
 
 .fade.visible {
-
     opacity: 1;
 
-    transform:
-        translateY(0);
-
+    transform: translateY(0);
 }
 
 
 /* ======================================================
-   ESTADO DE FOCO
+   FOCO
    ====================================================== */
 
 a:focus-visible {
-
     outline:
         2px solid var(--primary);
 
     outline-offset: 4px;
-
 }
 
 
@@ -1883,15 +1627,32 @@ a:focus-visible {
 .card,
 .produto,
 .footer-grid > div {
+    overflow-wrap: anywhere;
+}
 
-    overflow-wrap:
-        anywhere;
+
+/* ======================================================
+   ACESSIBILIDADE
+   ====================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+
+        animation-duration:
+            0.01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            0.01ms !important;
+    }
 
 }
-/* ======================================================
-   RESPONSIVIDADE
-   SMOKE DETECTION — MOBILE / TABLET
-   ====================================================== */
 
 
 /* ======================================================
@@ -1901,70 +1662,59 @@ a:focus-visible {
 @media (max-width: 1100px) {
 
     .nav {
-
         gap: 18px;
-
     }
+
 
     nav {
-
         gap: 20px;
-
     }
+
 
     nav a {
-
         font-size: 14px;
-
     }
+
 
     .btn-nav {
-
-        padding:
-            11px 18px;
+        padding: 11px 18px;
 
         font-size: 13px;
-
     }
 
-    .hero {
 
+    .hero {
         padding:
             140px 6%
             90px;
-
     }
+
 
     .hero-content {
-
         max-width: 850px;
-
     }
+
 
     .section {
-
         padding:
             100px 6%;
-
     }
 
-    .numbers {
 
+    .numbers {
         padding:
             70px 6%;
 
         grid-template-columns:
             repeat(2, 1fr);
-
     }
 
-    .footer-grid {
 
+    .footer-grid {
         grid-template-columns:
             repeat(2, 1fr);
 
         gap: 40px;
-
     }
 
 }
@@ -1977,69 +1727,59 @@ a:focus-visible {
 @media (max-width: 900px) {
 
     .nav {
-
         min-height: 78px;
-
     }
+
 
     .logo {
-
         height: 52px;
-
     }
+
 
     nav {
-
         gap: 15px;
-
     }
+
 
     nav a {
-
         font-size: 13px;
-
     }
 
-    .btn-nav {
 
+    .btn-nav {
         min-height: 44px;
 
         padding:
             10px 15px;
 
         font-size: 12px;
-
     }
+
 
     .hero {
-
         min-height: 90vh;
-
     }
 
-    .hero h1 {
 
+    .hero h1 {
         font-size:
             clamp(
                 38px,
                 6vw,
                 56px
             );
-
     }
+
 
     .cards {
-
         grid-template-columns:
             repeat(2, 1fr);
-
     }
 
-    .produtos {
 
+    .produtos {
         grid-template-columns:
             repeat(2, 1fr);
-
     }
 
 }
@@ -2051,23 +1791,12 @@ a:focus-visible {
 
 @media (max-width: 768px) {
 
-    /* ==========================
-       BODY
-       ========================== */
-
     body {
-
         font-size: 14px;
-
     }
 
 
-    /* ==========================
-       HEADER
-       ========================== */
-
     header {
-
         background:
             rgba(5, 5, 5, 0.92);
 
@@ -2076,124 +1805,85 @@ a:focus-visible {
 
         -webkit-backdrop-filter:
             blur(18px);
-
     }
 
 
     .nav {
-
         min-height: 72px;
 
         width: 92%;
-
     }
 
 
     .logo {
-
         height: 48px;
-
     }
 
 
-    /*
-       No momento escondemos o menu
-       desktop.
-       
-       O menu mobile será adicionado
-       no HTML/JS em seguida.
-    */
-
     nav {
-
         display: none;
-
     }
 
 
     .btn-nav {
-
         min-height: 42px;
 
         padding:
             9px 14px;
 
         font-size: 12px;
-
     }
 
 
     .btn-nav i {
-
         font-size: 14px;
-
     }
 
 
-    /* ==========================
-       HERO
-       ========================== */
-
     .hero {
-
         min-height: auto;
 
         padding:
             145px 6%
             90px;
-
     }
 
 
     .hero::before {
-
         width: 480px;
-
         height: 480px;
 
         top: -220px;
-
         right: -220px;
-
     }
 
 
     .hero::after {
-
         width: 400px;
-
         height: 400px;
 
         bottom: -230px;
-
         left: -230px;
-
     }
 
 
     .hero-content {
-
         max-width: 100%;
-
     }
 
 
     .hero-content > span {
-
         margin-bottom: 16px;
 
         font-size: 11px;
 
-        letter-spacing:
-            1.5px;
+        letter-spacing: 1.5px;
 
         line-height: 1.6;
-
     }
 
 
     .hero h1 {
-
         margin-bottom: 20px;
 
         font-size:
@@ -2205,41 +1895,30 @@ a:focus-visible {
 
         line-height: 1.15;
 
-        letter-spacing:
-            -0.8px;
-
+        letter-spacing: -0.8px;
     }
 
 
     .hero p {
-
         margin-bottom: 32px;
 
         font-size: 15px;
 
         line-height: 1.75;
-
     }
 
 
-    /* ==========================
-       BOTÕES
-       ========================== */
-
     .buttons {
-
         width: 100%;
 
         flex-direction: column;
 
         gap: 12px;
-
     }
 
 
     .btn-primary,
     .btn-secondary {
-
         width: 100%;
 
         min-height: 52px;
@@ -2248,32 +1927,22 @@ a:focus-visible {
             13px 20px;
 
         font-size: 14px;
-
     }
 
 
-    /* ==========================
-       SEÇÕES
-       ========================== */
-
     section {
-
         padding:
             80px 6%;
-
     }
 
 
     .section {
-
         padding:
             80px 6%;
-
     }
 
 
     .section h2 {
-
         margin-bottom: 18px;
 
         font-size:
@@ -2284,61 +1953,45 @@ a:focus-visible {
             );
 
         line-height: 1.2;
-
     }
 
 
     .section h2::after {
-
         width: 45px;
 
         height: 3px;
 
         margin-top: 15px;
-
     }
 
 
     .subtitle {
-
         margin-bottom: 38px;
 
         font-size: 14px;
 
         line-height: 1.8;
-
     }
 
 
-    /* ==========================
-       CARDS
-       ========================== */
-
     .cards {
-
-        grid-template-columns:
-            1fr;
+        grid-template-columns: 1fr;
 
         gap: 18px;
-
     }
 
 
     .card {
-
         padding:
             30px 24px;
 
         border-radius:
             18px;
-
     }
 
 
     .card i {
-
         width: 64px;
-
         height: 64px;
 
         margin-bottom: 18px;
@@ -2346,119 +1999,89 @@ a:focus-visible {
         border-radius: 17px;
 
         font-size: 27px;
-
     }
 
 
     .card h3 {
-
         font-size: 18px;
-
     }
 
 
     .card p {
-
         font-size: 13px;
 
         line-height: 1.75;
-
     }
 
 
-    /* ==========================
-       PRODUTOS
-       ========================== */
-
     .produtos {
-
         width: 100%;
 
-        grid-template-columns:
-            1fr;
+        grid-template-columns: 1fr;
 
         gap: 20px;
-
     }
 
 
     .produto {
-
         padding: 16px;
 
-        border-radius:
-            18px;
-
+        border-radius: 18px;
     }
 
 
     .produto img {
-
         height: 220px;
 
         margin-bottom: 18px;
-
     }
 
 
     .produto h3 {
-
         font-size: 18px;
-
     }
 
 
     .produto p {
-
         min-height: auto;
 
         margin-bottom: 18px;
 
         font-size: 13px;
-
     }
 
 
-    .btn-produto {
+    .produto-buttons {
+        gap: 10px;
+    }
 
+
+    .produto-buttons .btn-secondary,
+    .produto-buttons .btn-produto {
         min-height: 48px;
 
         font-size: 13px;
-
     }
 
 
-    /* ==========================
-       BOTÃO VOLTAR
-       ========================== */
-
     .btn-container {
-
         width: 88%;
 
         margin-top: 105px;
-
     }
 
 
     .btn {
-
         min-height: 44px;
 
         padding:
             10px 17px;
 
         font-size: 13px;
-
     }
 
 
-    /* ==========================
-       NÚMEROS
-       ========================== */
-
     .numbers {
-
         padding:
             65px 6%;
 
@@ -2467,140 +2090,105 @@ a:focus-visible {
 
         gap:
             45px 20px;
-
     }
 
 
     .number h2 {
-
         font-size:
             clamp(
                 34px,
                 10vw,
                 46px
             );
-
     }
 
 
     .number span {
-
         display: block;
 
         font-size: 12px;
 
         line-height: 1.5;
-
     }
 
 
-    /* ==========================
-       CTA
-       ========================== */
-
     .cta {
-
         padding:
             85px 6%;
-
     }
 
 
     .cta h2 {
-
         font-size:
             clamp(
                 28px,
                 8vw,
                 38px
             );
-
     }
 
 
     .cta p {
-
         font-size: 14px;
 
         line-height: 1.75;
-
     }
 
 
-    /* ==========================
-       FOOTER
-       ========================== */
-
     footer {
-
         padding:
             60px 6% 25px;
-
     }
 
 
     .footer-grid {
-
-        grid-template-columns:
-            1fr;
+        grid-template-columns: 1fr;
 
         gap: 35px;
 
         padding-bottom: 35px;
-
     }
 
 
     .footer-grid .logo {
-
         height: 52px;
-
     }
 
 
     .footer-grid h3 {
-
         margin-bottom: 14px;
 
         font-size: 15px;
-
     }
 
 
     .footer-grid p {
-
         font-size: 13px;
-
     }
 
 
     .footer-copy {
-
         padding-top: 20px;
 
         font-size: 11px;
 
         line-height: 1.6;
-
     }
 
 
-    /* ==========================
-       WHATSAPP
-       ========================== */
-
     .whatsapp {
-
         right: 18px;
-
         bottom: 18px;
 
         width: 58px;
-
         height: 58px;
 
         font-size: 27px;
+    }
 
+
+    .catalogos-section .card .btn-primary {
+        max-width: 100%;
     }
 
 }
@@ -2613,178 +2201,141 @@ a:focus-visible {
 @media (max-width: 480px) {
 
     .nav {
-
         width: 90%;
-
     }
 
 
     .logo {
-
         height: 44px;
-
     }
 
 
     .btn-nav {
-
         padding:
             8px 12px;
 
         font-size: 11px;
-
     }
 
 
     .hero {
-
         padding:
             135px 5%
             75px;
-
     }
 
 
     .hero-content > span {
-
         font-size: 10px;
 
         letter-spacing:
             1.2px;
-
     }
 
 
     .hero h1 {
-
         font-size:
             clamp(
                 30px,
                 9.5vw,
                 40px
             );
-
     }
 
 
     .hero p {
-
         font-size: 14px;
-
     }
 
 
     .section {
-
         padding:
             70px 5%;
-
     }
 
 
     .section h2 {
-
         font-size:
             clamp(
                 26px,
                 8.5vw,
                 34px
             );
-
     }
 
 
     .subtitle {
-
         font-size: 13px;
-
     }
 
 
     .card {
-
         padding:
             27px 20px;
-
     }
 
 
     .produto {
-
         padding: 14px;
-
     }
 
 
     .produto img {
-
         height: 200px;
+    }
 
+
+    .produto-buttons .btn-secondary,
+    .produto-buttons .btn-produto {
+        min-height: 47px;
     }
 
 
     .numbers {
-
-        grid-template-columns:
-            1fr;
+        grid-template-columns: 1fr;
 
         gap: 38px;
 
         padding:
             60px 5%;
-
     }
 
 
     .number h2 {
-
         font-size: 40px;
-
     }
 
 
     .cta {
-
         padding:
             75px 5%;
-
     }
 
 
     .cta h2 {
-
         font-size: 29px;
-
     }
 
 
     .cta p {
-
         font-size: 13px;
-
     }
 
 
     footer {
-
         padding:
             50px 5% 20px;
-
     }
 
 
     .whatsapp {
-
         right: 15px;
-
         bottom: 15px;
 
         width: 55px;
-
         height: 55px;
 
         font-size: 25px;
-
     }
 
 }
@@ -2797,91 +2348,69 @@ a:focus-visible {
 @media (max-width: 360px) {
 
     .logo {
-
         height: 40px;
-
     }
 
 
     .btn-nav {
-
         padding:
             8px 10px;
 
         font-size: 10px;
-
     }
 
 
     .hero {
-
         padding:
             125px 5%
             65px;
-
     }
 
 
     .hero h1 {
-
         font-size: 29px;
-
     }
 
 
     .hero p {
-
         font-size: 13px;
-
     }
 
 
     .btn-primary,
     .btn-secondary {
-
         min-height: 49px;
 
         padding:
             12px 16px;
 
         font-size: 13px;
-
     }
 
 
     .section h2 {
-
         font-size: 25px;
-
     }
 
 
     .card {
-
         padding:
             24px 17px;
-
     }
 
 
     .produto img {
-
         height: 180px;
-
     }
 
 
     .number h2 {
-
         font-size: 36px;
-
     }
 
 
     .number span {
-
         font-size: 11px;
-
     }
 
 }
@@ -2894,36 +2423,25 @@ a:focus-visible {
 @media (min-width: 1600px) {
 
     .hero-content {
-
         max-width: 1050px;
-
     }
 
 
     .section {
-
         padding-left: 10%;
-
         padding-right: 10%;
-
     }
 
 
     .numbers {
-
         padding-left: 10%;
-
         padding-right: 10%;
-
     }
 
 
     footer {
-
         padding-left: 10%;
-
         padding-right: 10%;
-
     }
 
 }
@@ -2936,7 +2454,6 @@ a:focus-visible {
 @media (hover: none) {
 
     .card:hover {
-
         transform: none;
 
         box-shadow:
@@ -2944,12 +2461,10 @@ a:focus-visible {
 
         border-color:
             var(--border);
-
     }
 
 
     .produto:hover {
-
         transform: none;
 
         box-shadow:
@@ -2957,23 +2472,18 @@ a:focus-visible {
 
         border-color:
             var(--border);
-
     }
 
 
     .btn-primary:hover,
     .btn-secondary:hover,
     .btn-nav:hover {
-
         transform: none;
-
     }
 
 
     .produto:hover img {
-
         transform: none;
-
     }
 
 }
@@ -2989,28 +2499,22 @@ a:focus-visible {
     .whatsapp,
     .buttons,
     .btn-nav {
-
         display: none !important;
-
     }
 
 
     body {
-
         background: #ffffff;
 
         color: #000000;
-
     }
 
 
     section,
     footer {
-
         background: #ffffff !important;
 
         color: #000000;
-
     }
 
 }
