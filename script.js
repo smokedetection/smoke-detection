@@ -1,13 +1,13 @@
-/*==========================================
-  SMOKE DETECTION
-  script.js — V2.0 CORRIGIDO
-==========================================*/
+/* ==========================================
+   SMOKE DETECTION
+   script.js
+========================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    /*==========================================
-      NAVBAR
-    ==========================================*/
+    /* ==============================
+       NAVBAR
+    ============================== */
 
     const header = document.querySelector("header");
 
@@ -17,12 +17,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (window.scrollY > 80) {
 
-                header.style.background = "rgba(8, 8, 8, 0.96)";
-                header.style.boxShadow = "0 10px 30px rgba(0, 0, 0, 0.35)";
+                header.style.background = "rgba(8,8,8,.96)";
+                header.style.boxShadow = "0 10px 30px rgba(0,0,0,.35)";
 
             } else {
 
-                header.style.background = "rgba(5, 5, 5, 0.68)";
+                header.style.background = "rgba(5,5,5,.68)";
                 header.style.boxShadow = "none";
 
             }
@@ -31,207 +31,200 @@ document.addEventListener("DOMContentLoaded", () => {
 
         updateHeader();
 
-        window.addEventListener("scroll", updateHeader, {
-            passive: true
-        });
+        window.addEventListener("scroll", updateHeader);
 
     }
 
 
-    /*==========================================
-      REVEAL AO ROLAR
-    ==========================================*/
+    /* ==============================
+       REVEAL SCROLL
+    ============================== */
 
     const reveals = document.querySelectorAll(
         ".fade, .left, .right, .zoom"
     );
 
-    if (reveals.length > 0) {
+    const reveal = () => {
 
-        const reveal = () => {
+        const windowHeight = window.innerHeight;
 
-            const windowHeight = window.innerHeight;
+        reveals.forEach(el => {
 
-            reveals.forEach(element => {
+            const top = el.getBoundingClientRect().top;
 
-                const top = element.getBoundingClientRect().top;
+            if (top < windowHeight - 80) {
 
-                if (top < windowHeight - 100) {
+                el.classList.add("visible");
 
-                    element.classList.add("visible");
+            }
 
-                }
-
-            });
-
-        };
-
-        reveal();
-
-        window.addEventListener("scroll", reveal, {
-            passive: true
         });
 
-    }
+    };
+
+    reveal();
+
+    window.addEventListener("scroll", reveal);
 
 
-    /*==========================================
-      CONTADORES
-    ==========================================*/
+    /* ==============================
+       CONTADORES
+    ============================== */
 
     const counters = document.querySelectorAll(".counter");
 
-    if (counters.length > 0) {
+    const startCounters = () => {
 
-        const startCounters = () => {
+        counters.forEach(counter => {
 
-            counters.forEach(counter => {
+            if (counter.dataset.started === "true") {
+                return;
+            }
 
-                if (counter.dataset.started === "true") {
+            const top = counter.getBoundingClientRect().top;
+
+            if (top < window.innerHeight - 80) {
+
+                counter.dataset.started = "true";
+
+                const target = Number(counter.dataset.target);
+
+                if (!target || target <= 0) {
                     return;
                 }
 
-                const top = counter.getBoundingClientRect().top;
+                let current = 0;
 
-                if (top < window.innerHeight - 80) {
+                const increment = Math.max(
+                    1,
+                    Math.ceil(target / 70)
+                );
 
-                    counter.dataset.started = "true";
+                const timer = setInterval(() => {
 
-                    const target = Number(
-                        counter.dataset.target
-                    );
+                    current += increment;
 
-                    if (!Number.isFinite(target)) {
-                        return;
+                    if (current >= target) {
+
+                        current = target;
+
+                        clearInterval(timer);
+
                     }
 
-                    let current = 0;
+                    if (target >= 100) {
 
-                    const increment = Math.max(
-                        1,
-                        Math.ceil(target / 70)
-                    );
+                        counter.textContent =
+                            current + "%";
 
-                    const timer = setInterval(() => {
+                    } else {
 
-                        current += increment;
+                        counter.textContent =
+                            current + "+";
 
-                        if (current >= target) {
+                    }
 
-                            current = target;
+                }, 25);
 
-                            clearInterval(timer);
+            }
 
-                        }
+        });
 
-                        if (target >= 100) {
+    };
 
-                            counter.textContent =
-                                current + "%";
+    startCounters();
 
-                        } else {
-
-                            counter.textContent =
-                                current + "+";
-
-                        }
-
-                    }, 25);
-
-                }
-
-            });
-
-        };
-
-        startCounters();
-
-        window.addEventListener(
-            "scroll",
-            startCounters,
-            { passive: true }
-        );
-
-    }
+    window.addEventListener(
+        "scroll",
+        startCounters
+    );
 
 
-    /*==========================================
-      SCROLL SUAVE
-    ==========================================*/
+    /* ==============================
+       SCROLL SUAVE
+    ============================== */
 
     document
         .querySelectorAll('a[href^="#"]')
         .forEach(anchor => {
 
-            anchor.addEventListener("click", function (event) {
+            anchor.addEventListener(
+                "click",
+                function (e) {
 
-                const selector = this.getAttribute("href");
+                    const href =
+                        this.getAttribute("href");
 
-                if (!selector || selector === "#") {
-                    return;
-                }
+                    if (!href || href === "#") {
+                        return;
+                    }
 
-                let target = null;
+                    const target =
+                        document.querySelector(href);
 
-                try {
+                    if (target) {
 
-                    target = document.querySelector(selector);
+                        e.preventDefault();
 
-                } catch (error) {
+                        target.scrollIntoView({
+                            behavior: "smooth",
+                            block: "start"
+                        });
 
-                    return;
-
-                }
-
-                if (target) {
-
-                    event.preventDefault();
-
-                    target.scrollIntoView({
-                        behavior: "smooth",
-                        block: "start"
-                    });
+                    }
 
                 }
-
-            });
+            );
 
         });
 
 
-    /*==========================================
-      BOTÕES
-      IMPORTANTE:
-      Não forçar transform pelo JS.
-      O CSS controla os efeitos.
-    ==========================================*/
+    /* ==============================
+       BOTÕES
+    ============================== */
 
-    /*
-      Removido o antigo código de mouseenter/mouseleave.
+    document
+        .querySelectorAll(
+            ".btn-primary, .btn-secondary, .btn-nav"
+        )
+        .forEach(btn => {
 
-      O CSS já possui:
-      - hover
-      - translateY
-      - scale
-      - box-shadow
-      - transições
+            btn.addEventListener(
+                "mouseenter",
+                () => {
 
-      Deixar o JavaScript alterar transform aqui
-      fazia os dois entrarem em conflito.
-    */
+                    btn.style.transform =
+                        "translateY(-4px) scale(1.02)";
+
+                }
+            );
+
+            btn.addEventListener(
+                "mouseleave",
+                () => {
+
+                    btn.style.transform =
+                        "translateY(0) scale(1)";
+
+                }
+            );
+
+        });
 
 
-    /*==========================================
-      WHATSAPP
-    ==========================================*/
+    /* ==============================
+       WHATSAPP
+    ============================== */
 
-    const whatsapp = document.querySelector(".whatsapp");
+    const whatsapp =
+        document.querySelector(".whatsapp");
 
     if (whatsapp) {
 
         setTimeout(() => {
 
             whatsapp.animate(
+
                 [
                     {
                         transform: "scale(1)"
@@ -243,10 +236,11 @@ document.addEventListener("DOMContentLoaded", () => {
                         transform: "scale(1)"
                     }
                 ],
+
                 {
-                    duration: 800,
-                    easing: "ease-in-out"
+                    duration: 800
                 }
+
             );
 
         }, 1800);
@@ -254,33 +248,48 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /*==========================================
-      CARDS
-      IMPORTANTE:
-      Não alterar background pelo JS.
+    /* ==============================
+       CARDS
+    ============================== */
 
-      O CSS já possui todo o efeito visual.
-    ==========================================*/
+    document
+        .querySelectorAll(".card")
+        .forEach(card => {
 
-    /*
-      Removido o efeito mousemove dos cards.
+            card.addEventListener(
+                "mousemove",
+                e => {
 
-      O JavaScript estava sobrescrevendo o background
-      definido no CSS e causando conflito visual.
-    */
+                    const rect =
+                        card.getBoundingClientRect();
+
+                    const x =
+                        e.clientX - rect.left;
+
+                    const y =
+                        e.clientY - rect.top;
+
+                    card.style.background =
+                        `radial-gradient(
+                            circle at ${x}px ${y}px,
+                            rgba(255,59,48,.12),
+                            rgba(255,255,255,.04) 60%
+                        )`;
+
+                }
+            );
 
 
-    /*==========================================
-      PROTEÇÃO CONTRA ERROS
-    ==========================================*/
+            card.addEventListener(
+                "mouseleave",
+                () => {
 
-    window.addEventListener("error", event => {
+                    card.style.background =
+                        "rgba(255,255,255,.04)";
 
-        console.warn(
-            "Smoke Detection:",
-            event.message
-        );
+                }
+            );
 
-    });
+        });
 
 });
